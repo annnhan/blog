@@ -1,4 +1,3 @@
----
 title: 如何实现一个ECMAScript 6 的promise补丁
 author: 阿安
 comments: true
@@ -17,22 +16,22 @@ Promise最先是CommonJS工作组提出的一种规范之一，目的是为了�
 
 #### 首先，我们来看看Promise构造函数。
 
-{% highlight javascript %}
-var Promise = function (fun) {
-        var me = this,
-            resolve = function (val) {
-                me.resolve(val);
-            },
-            reject = function (val) {
-                me.reject(val);
-            }
-        me._st = 'pending';
-        me._rsq = null;
-        me._rjq = null;
-        (typeof fun === 'function') && fun(resolve, reject);
-    },
-    fn = Promise.prototype;
-{% endhighlight %}
+
+    var Promise = function (fun) {
+            var me = this,
+                resolve = function (val) {
+                    me.resolve(val);
+                },
+                reject = function (val) {
+                    me.reject(val);
+                }
+            me._st = 'pending';
+            me._rsq = null;
+            me._rjq = null;
+            (typeof fun === 'function') && fun(resolve, reject);
+        },
+        fn = Promise.prototype;
+
 
 构造函数接受一个异步的回调函数，并调用，回调函数的2个参数，分别为异步操作成功和失败时候要调用的改变Promise实例状态的方法。
 \_st用于存放当前实例的状态，初始值为"pending"，异步操作成功为"resolve"，失败为"reject"。\_rsq用于存放异步操作成功的回调，\_rjq用于存放异步操作失败的回调。
@@ -43,30 +42,30 @@ var Promise = function (fun) {
 
 #### .then和.catch方法
 
-{% highlight javascript %}
 
-fn.then = function (resolve, reject) {
-    var pms = new Promise();
-    this._rsq = function (val) {
-        var ret = resolve ? resolve(val) : val;
-        if (ret instanceof Promise) {
-            ret.then(function (val) {
-                pms.resolve(val);
-            });
-        }
-        else{
-            pms.resolve(ret);
-        }
-    };
-    this._rjq = function (val) {
-        pms.reject(reject(val));
-    };
-    return pms;
-}
-fn.catch = function (reject) {
-    return this.then(null, reject);
-}
-{% endhighlight %}
+
+    fn.then = function (resolve, reject) {
+        var pms = new Promise();
+        this._rsq = function (val) {
+            var ret = resolve ? resolve(val) : val;
+            if (ret instanceof Promise) {
+                ret.then(function (val) {
+                    pms.resolve(val);
+                });
+            }
+            else{
+                pms.resolve(ret);
+            }
+        };
+        this._rjq = function (val) {
+            pms.reject(reject(val));
+        };
+        return pms;
+    }
+    fn.catch = function (reject) {
+        return this.then(null, reject);
+    }
+
 
 .then方法接受2个参数，成功回调和失败回调。then方法内部new了一个新的Promise对象pms并返回，从而实现链式调用。
 并且给实例的\_rsq和\_rjq分别挂了2个函数，是成功和失败的回调函数的调用，并把返回值传给pms的resolve和reject方法，这样我们就完成了参数的传递功能。
@@ -76,50 +75,50 @@ fn.catch = function (reject) {
 
 #### .resolve和.reject方法
 
-{% highlight javascript %}
-fn.resolve = function (val) {
-    if (this._st === 'resolved' || this._st === 'pending') {
-        this._st = 'resolved';
-        this._rsq && this._rsq(val);
+
+    fn.resolve = function (val) {
+        if (this._st === 'resolved' || this._st === 'pending') {
+            this._st = 'resolved';
+            this._rsq && this._rsq(val);
+        }
     }
-}
 
-fn.reject = function (val) {
-    if (this._st === 'rejected' || this._st === 'pending') {
-        this._st = 'rejected';
-        this._rsq && this._rjq(val);
+    fn.reject = function (val) {
+        if (this._st === 'rejected' || this._st === 'pending') {
+            this._st = 'rejected';
+            this._rsq && this._rjq(val);
+        }
     }
-}
-{% endhighlight %}
-
-.resolve方法接受一个参数，为上个回调函数的返回值，或者是上个异步操作函数的reslve函数的参数值。如果实例的状态为resolved或者pending的时候，才调用.\_rsq方法。
-.reject同理。
 
 
-#### Promise.all静态方法
+    .resolve方法接受一个参数，为上个回调函数的返回值，或者是上个异步操作函数的reslve函数的参数值。如果实例的状态为resolved或者pending的时候，才调用.\_rsq方法。
+    .reject同理。
 
-{% highlight javascript %}
-Promise.all = function (arr) {
-    var pms = new Promise();
-    var len = arr.length,
-        i = 0,
-        res = 0;
-    while (i < len) {
-        arr[i].then(
-            function () {
-                if (++res === len) {
-                    pms.resolve();
+
+    #### Promise.all静态方法
+
+
+    Promise.all = function (arr) {
+        var pms = new Promise();
+        var len = arr.length,
+            i = 0,
+            res = 0;
+        while (i < len) {
+            arr[i].then(
+                function () {
+                    if (++res === len) {
+                        pms.resolve();
+                    }
+                },
+                function (val) {
+                    pms.reject(val);
                 }
-            },
-            function (val) {
-                pms.reject(val);
-            }
-        );
-        i++;
+            );
+            i++;
+        }
+        return pms;
     }
-    return pms;
-}
-{% endhighlight %}
+
 
 Promise.all接受一个有promise对象的数组，并内部new了一个promise对象pms返回。当数组中所有的对象状态都成功的时候，执行pms.resolve()，即返回的promise对象状态变成resloved，
 若数组有一个失败，则pms.reject(val)。
@@ -127,23 +126,23 @@ Promise.all接受一个有promise对象的数组，并内部new了一个promise�
 
 #### Promise.resolve静态方法，这个好像没啥好讲的。
 
-{% highlight javascript %}
-Promise.resolve = function (obj) {
-    var pms = new Promise();
-    if (obj && typeof obj.then === 'function') {
-        for (var i in pms) {
-            obj[i] = pms[i];
+
+    Promise.resolve = function (obj) {
+        var pms = new Promise();
+        if (obj && typeof obj.then === 'function') {
+            for (var i in pms) {
+                obj[i] = pms[i];
+            }
+            return obj;
         }
-        return obj;
+        else {
+            setTimeout(function () {
+                pms.resolve(obj);
+            });
+            return pms;
+        }
     }
-    else {
-        setTimeout(function () {
-            pms.resolve(obj);
-        });
-        return pms;
-    }
-}
-{% endhighlight %}
+
 
 完整的代码，我放在[https://github.com/hanan198501/promise](https://github.com/hanan198501/promise)了，大家可以上去看看，也欢迎关注我的github。
 

@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2014-03-12 10:02:08+00:00
@@ -19,7 +18,7 @@ tags:
 
 
     
-    {% highlight css %}
+
     #iframe {
         display: block;
         width: 100%;
@@ -30,7 +29,7 @@ tags:
         left: 0px;
         z-index: -1;
     }
-    {% endhighlight %}
+
 
 
 
@@ -49,12 +48,12 @@ tags:
 
 
     
-    {% highlight html %}
+
     <div id="mask">
         <div style="height: 100%"></div>
         <iframe id="iframe"></iframe>
     </div>
-    {% endhighlight %}
+
 
 
 

@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2013-05-06 16:07:21+00:00
@@ -28,7 +27,7 @@ photoshop中的图层混合功能大家一定很熟悉。此功能可以根据�
 
 
 
-    {% highlight javascript %}
+
     //传入2个canvas
     function blend (cv1, cv2) {
         var c2d1 = cv1.getContext('2d');
@@ -67,7 +66,7 @@ photoshop中的图层混合功能大家一定很熟悉。此功能可以根据�
         //返回生成的图像url
         return cv1.toDataURL('image/png');
     }
-    {% endhighlight %}
+
 
 
 

@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2013-01-07 11:01:37+00:00
@@ -16,10 +15,10 @@ categories:
 写法：
 
     
-    {% highlight css %}
+
     {
         background-image: url(default.png);
         background-image: -webkit-image-set(url(no-retina.png) 1x, url(retina.png) 2x);
     }
-    {% endhighlight %}
+
 

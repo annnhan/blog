@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2012-09-04 15:47:58+00:00
@@ -18,7 +17,7 @@ categories:
 下面我也来贴一个算法。
 
     
-    {% highlight javascript %}
+
     function getArray (){ //创建随机丢失3个数字的数组，并打乱顺序。
     	var arr =[]
     	for(var i=1;i<=10000;i++){
@@ -50,5 +49,5 @@ categories:
     var arr = getArray ();
     var mis = getMissMunber(arr);
     console.log('计算结果: ' + mis);
-    {% endhighlight %}
+
 

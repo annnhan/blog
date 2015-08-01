@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2012-04-26 09:38:23+00:00
@@ -18,7 +17,7 @@ tags:
 大家都知道万恶的IE在ajax中往往只读取第一次ajax请求时候的数据，其余时候都是从cache提取数据，（太懒了T_T）。原生的JS清除ajax缓存的方法多,但是终觉有点繁琐，如果是用jquery的同学，就设置一个参数就OK了,那就是cache: false，比如：
 
     
-    {% highlight javascript %}
+
     $.ajax({
     	url: "mms-draft!getMmsDraftList",
     	cache: false,
@@ -30,7 +29,7 @@ tags:
     		//do something
     	}
     });
-    {% endhighlight %}
+
 
 
 

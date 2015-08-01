@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2013-03-24 12:50:20+00:00
@@ -16,7 +15,7 @@ tags:
 在JavaScript代码中，因为各浏览器之间的行为的差异，我们经常会在函数中包含了大量的if语句，以检查浏览器特性，解决不同浏览器的兼容问题。例如，我们最常见的为dom节点添加事件的函数：
 
     
-    {% highlight javascript %}
+
     function addEvent (type, element, fun) {
         if (element.addEventListener) {
             element.addEventListener(type, fun, false);
@@ -28,7 +27,7 @@ tags:
             element['on' + type] = fun;
         }
     }
-    {% endhighlight %}
+
 
 
 
@@ -37,7 +36,7 @@ tags:
 所谓惰性载入，就是说函数的if分支只会执行一次，之后调用函数时，直接进入所支持的分支代码。有两种实现惰性载入的方式，第一种事函数在第一次调用时，对函数本身进行二次处理，该函数会被覆盖为符合分支条件的函数，这样对原函数的调用就不用再经过执行的分支了，我们可以用下面的方式使用惰性载入重写addEvent()。
 
     
-    {% highlight javascript %}
+
     function addEvent (type, element, fun) {
         if (element.addEventListener) {
             addEvent = function (type, element, fun) {
@@ -56,7 +55,7 @@ tags:
         }
         return addEvent(type, element, fun);
     }
-    {% endhighlight %}
+
 
 
 
@@ -65,7 +64,7 @@ tags:
 第二种实现惰性载入的方式是在声明函数时就指定适当的函数。这样在第一次调用函数时就不会损失性能了，只在代码加载时会损失一点性能。一下就是按照这一思路重写的addEvent()。
 
 
-    {% highlight javascript %}
+
     var addEvent = (function () {
         if (document.addEventListener) {
             return function (type, element, fun) {
@@ -83,7 +82,7 @@ tags:
             }
         }
     })();
-    {% endhighlight %}
+
 
 
 

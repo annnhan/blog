@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2012-04-25 03:33:35+00:00
@@ -20,11 +19,11 @@ tags:
 我们假定一个页面离开取消事件，叫做onunloadcancel。显然，这个事件应触发在用户按下对话框的取消按钮之后。但关闭提示对话框的触发流程并不是那么简单。我们先来回顾下这个过程：
 
     
-    {% highlight javascript %}
+    
     window.onbeforeunload = function(){
         return "真的离开?";
     }
-    {% endhighlight %}
+    
 
 
 当用户准备离开页面（比如按下关闭按钮，或者刷新页面等等），onbeforeunload事件触发。我们的脚本无法在这个事件里决定是否阻止页面的关闭，唯一能做到的只有返回一个字符串，这个字符串仅作为说明文字出现在关闭选择对话框里，用户可以选择关闭，或者不关闭。但究竟选择哪个，我们无从得知。
@@ -33,7 +32,7 @@ tags:
 
 
     
-    {% highlight javascript %}
+    
     window.onbeforeunload = function(){
         setTimeout(onunloadcancel, 10);
         return "真的离开?";
@@ -41,7 +40,7 @@ tags:
     window.onunloadcancel = function(){
         alert("取消离开");
     }
-    {% endhighlight %}
+    
 
 
 
@@ -50,7 +49,7 @@ tags:
 2) 如果是通过刷新页面的方式离开，仅执行一次onbeforeunload，但点击X按钮关闭页面，会执行两次onbeforeunload。因此我们还需在完善下，以便兼容FF。
 
     
-    {% highlight javascript %}
+    
     var _t;
     window.onbeforeunload = function(){
         setTimeout(function(){_t = setTimeout(onunloadcancel, 0)}, 0);
@@ -60,7 +59,7 @@ tags:
         clearTimeout(_t);
         alert("取消离开");
     }
-    {% endhighlight %}
+    
 
 
 

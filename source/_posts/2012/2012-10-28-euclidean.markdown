@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2012-10-28 15:49:58+00:00
@@ -49,7 +48,7 @@ tags:
 在javascript中我们可以通过一个while循环来实现这个计算过程：
 
     
-    {% highlight javascript %}
+
     function gcd(a, b){
         var t; //临时变量，用于储存值
         if(a<b){ //交换，确保a>=b
@@ -65,14 +64,14 @@ tags:
         return a;
     }
     gcd(481, 221); //13
-    {% endhighlight %}
+
 
 
 
 或者我们可以通过一个递归来实现类似的计算：
 
 
-    {% highlight javascript %}
+
     function gcd2(a, b){
         var t;
         if(a<b){
@@ -86,5 +85,5 @@ tags:
         return a
     }
     gcd2(481, 221); //13
-    {% endhighlight %}
+
 

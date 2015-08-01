@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2012-08-29 02:37:16+00:00
@@ -17,7 +16,7 @@ tags:
 来个暴力解法法：
 
     
-    {% highlight javascript %}
+
     for(var a=1;a<=9;a++){
     	for(var b=0;b<=9;b++){
     		for(var c=0;c<=9;c++){
@@ -36,7 +35,7 @@ tags:
     		}
     	}
     }
-    {% endhighlight %}
+
 
 
 

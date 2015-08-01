@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2013-02-04 16:29:12+00:00
@@ -20,7 +19,7 @@ DEMO：[/wp-content/uploads/linkgame/linkgame.html](/wp-content/uploads/linkgame
 
     
     
-    {% highlight javascript %}
+
     <html>
     <head>
     <title>琼海老乡连连看</title>
@@ -370,5 +369,5 @@ DEMO：[/wp-content/uploads/linkgame/linkgame.html](/wp-content/uploads/linkgame
     <p><a href="http://cssha.com/">前端手记</a></p>
     </body>
     </html>
-    {% endhighlight %}
+
 

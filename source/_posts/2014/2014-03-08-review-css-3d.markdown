@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2014-03-08 04:26:07+00:00
@@ -21,7 +20,7 @@ tags:
 
 
     
-    {% highlight html %}
+
     <div id="arena">
         <div id="box">
             <div class="face">1</div>
@@ -32,7 +31,7 @@ tags:
             <div class="face">6</div>
         </div>
     </div>
-    {% endhighlight %}
+
 
 
 
@@ -44,12 +43,12 @@ tags:
 
 
 
-    {% highlight css %}
+
     #arena {
         -webkit-perspective: 400;
         -webkit-perspective-origin: 50% 50%;
     }
-    {% endhighlight %}
+
 
 
 
@@ -61,7 +60,7 @@ tags:
 
 
 
-    {% highlight css %}
+
     #box {
         position: relative;
         margin: 100px auto;
@@ -70,7 +69,7 @@ tags:
         -webkit-transition: -webkit-transform 2s linear;
         -webkit-transform-style: preserve-3d;
     }
-    {% endhighlight %}
+
 
 
 
@@ -82,7 +81,7 @@ tags:
 
 
 
-    {% highlight css %}
+
     .face {
         color: #FFF;
         font-size: 30px;
@@ -94,7 +93,7 @@ tags:
         padding: 20px;
         border: 1px solid #333;
     }
-    {% endhighlight %}
+
 
 
 
@@ -106,14 +105,14 @@ tags:
 
 
 
-    {% highlight css %}
+
     .face:nth-child(1) {-webkit-transform: translateZ(100px);}
     .face:nth-child(2) {-webkit-transform: rotateY(90deg) translateZ(100px);}
     .face:nth-child(3) {-webkit-transform: rotateY(180deg) translateZ(100px);}
     .face:nth-child(4) {-webkit-transform: rotateY(270deg) translateZ(100px);}
     .face:nth-child(5) {-webkit-transform: rotateX(90deg) translateZ(100px);}
     .face:nth-child(6) {-webkit-transform: rotateX(270deg) translateZ(100px);}
-    {% endhighlight %}
+
 
 
 
@@ -125,7 +124,7 @@ tags:
 
 
 
-    {% highlight javascript %}
+
     var xAngle = 0, yAngle = 0;
     document.addEventListener('keydown', function(e){
         switch (e.keyCode) {
@@ -145,7 +144,7 @@ tags:
         var box = document.getElementById('box');
         box.style.webkitTransform = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";
     }, false);
-    {% endhighlight %}
+
 
 
 

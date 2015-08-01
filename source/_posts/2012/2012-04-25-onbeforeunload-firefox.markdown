@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2012-04-25 07:45:37+00:00
@@ -19,11 +18,11 @@ tags:
 最近项目中用到了onbeforeunload，遇到了平时一些比较少见的怪异情况，比如在上一篇文章有提到过的获取返回值问题：[http://www.cssha.com/archives/209](http://www.cssha.com/archives/209),然后马上又发现在firefox11中又存在着兼容问题：
 
     
-    {% highlight javascript %}
+
     $(window).bind('beforeunload',function(){
         return '您的内容尚未保存，确定要离开本页吗？';
     });
-    {% endhighlight %}
+
 
 
 
@@ -33,7 +32,7 @@ tags:
 因此，我们还需要加上对firefox的判断，并利用confirm来实现我们要的显示的信息。
 
     
-    {% highlight javascript %}
+
     $(window).bind('beforeunload',function(){
       if ( /Firefox[\/\s](\d+)/.test(navigator.userAgent) && new Number(RegExp.$1) >= 4) {
           if(confirm('您的内容尚未保存，确定要离开本页吗？')){
@@ -45,7 +44,7 @@ tags:
           return '您的内容尚未保存，确定要离开本页吗？';
       }
     });
-    {% endhighlight %}
+
 
 
 

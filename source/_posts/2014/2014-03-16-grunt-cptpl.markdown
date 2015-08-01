@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2014-03-16 07:25:43+00:00
@@ -95,22 +94,22 @@ grunt-cptpl会读取每个模板文件的文本内容，用指定模板引擎的
 
 
 
-{% highlight javascript %}
-grunt.initConfig({
-    cptpl: {
-        your_target: {
-            options: {
-                // 任务特定的选项放在这里
-            },
-            files: {
-                // 目标特定的文件列表放在这里
-                'tmp/': ['test/html/abc.html', 'test/html/abc2.html'， 'mytemplate/*']
-            }
 
+    grunt.initConfig({
+        cptpl: {
+            your_target: {
+                options: {
+                    // 任务特定的选项放在这里
+                },
+                files: {
+                    // 目标特定的文件列表放在这里
+                    'tmp/': ['test/html/abc.html', 'test/html/abc2.html'， 'mytemplate/*']
+                }
+
+            },
         },
-    },
-});
-{% endhighlight %}
+    });
+
 
 
 
@@ -164,19 +163,19 @@ Example： 运行下面cptpl任务，将会把 `test/html/` 目录下的 `abc.ht
 
 
 
-{% highlight javascript %}
-cptpl: {
-    test: {
-        options: {
-            banner: '/*BANNER*/\n',
-            engine: 'dot'
-        },
-        files: {
-            'tmp/': ['test/html/abc.html']
+
+    cptpl: {
+        test: {
+            options: {
+                banner: '/*BANNER*/\n',
+                engine: 'dot'
+            },
+            files: {
+                'tmp/': ['test/html/abc.html']
+            }
         }
     }
-}
-{% endhighlight %}
+
 
 
 
@@ -188,16 +187,16 @@ cptpl: {
 
 
 
-{% highlight javascript %}
-//abc.html中的内容：
-<h1>{{title}}</h1>
-<p>{{content}}</p>
+
+    //abc.html中的内容：
+    <h1>{{title}}</h1>
+    <p>{{content}}</p>
 
 
-//编译后，abc.js中的内容：
-/*BANNER*/
-;window.abc = doT.template('<h1>{{title}}</h1><p>{{content}}</p>');
-{% endhighlight %}
+    //编译后，abc.js中的内容：
+    /*BANNER*/
+    ;window.abc = doT.template('<h1>{{title}}</h1><p>{{content}}</p>');
+
 
 
 
@@ -227,37 +226,37 @@ Example：
 
 
 
-{% highlight javascript %}
-cptpl: {
-    test: {
-        options: {
-            engine: 'dot',
-            context: 'myObj'
-        },
-        files: {
-            'tmp/': ['test/html/abc.html']
+
+    cptpl: {
+        test: {
+            options: {
+                engine: 'dot',
+                context: 'myObj'
+            },
+            files: {
+                'tmp/': ['test/html/abc.html']
+            }
         }
     }
-}
 
-// context: 'myObj'
-// abc.js ==>
-;myObj.abc = doT.template('<h1>{{title}}</h1><p>{{content}}</p>');
-
-
-// context: '{AMD}'
-// abc.js ==>
-;define(function() {
-    return doT.template('<h1>{{title}}</h1><p>{{content}}</p>');
-});
+    // context: 'myObj'
+    // abc.js ==>
+    ;myObj.abc = doT.template('<h1>{{title}}</h1><p>{{content}}</p>');
 
 
-// context: '{CMD}'
-// abc.js ==>
-;define(function(require, exports, module) {
-    module.exports = doT.template('<h1>{{title}}</h1><p>{{content}}</p>');
-});
-{% endhighlight %}
+    // context: '{AMD}'
+    // abc.js ==>
+    ;define(function() {
+        return doT.template('<h1>{{title}}</h1><p>{{content}}</p>');
+    });
+
+
+    // context: '{CMD}'
+    // abc.js ==>
+    ;define(function(require, exports, module) {
+        module.exports = doT.template('<h1>{{title}}</h1><p>{{content}}</p>');
+    });
+
 
 
 
@@ -287,7 +286,7 @@ Example： 下面代码将生成的javascript文件名前面都加上 `__`， `a
 
 
 
-    {% highlight javascript %}
+
     cptpl: {
         test: {
             options: {
@@ -304,7 +303,7 @@ Example： 下面代码将生成的javascript文件名前面都加上 `__`， `a
 
     // __abc.js ==>
     ;window.__abc = doT.template('<h1>{{title}}</h1><p>{{content}}</p>');
-    {% endhighlight %}
+
 
 
 
@@ -334,7 +333,7 @@ Example：
 
 
 
-    {% highlight javascript %}
+
     cptpl: {
         test: {
             options: {
@@ -353,7 +352,7 @@ Example：
 
     // abc.js ==>
     ;window.abc = myEngine.compile('<h1>{{title}}</h1><p>{{content}}</p>');
-    {% endhighlight %}
+
 
 
 

@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2012-09-08 05:43:18+00:00
@@ -19,7 +18,7 @@ tags:
 
     
     
-    {% highlight javascript %}
+
     <html>
     <head>
     <meta charset="utf-8"></meta>
@@ -422,4 +421,3 @@ tags:
     </span>
     </body>
     </html>
-    {% endhighlight %}

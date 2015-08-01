@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2013-09-11 19:35:50+00:00
@@ -50,14 +49,14 @@ tags:
 
 
 
-    {% highlight javascript %}
+
     var reflect = value => value;
 
     // 相当于:
     var reflect = function(value) {
         return value;
     };
-    {% endhighlight %}
+
 
 
 
@@ -75,14 +74,14 @@ tags:
 
 
 
-    {% highlight javascript %}
+
     var sum = (num1, num2) => num1 + num2;
 
     // 相当于:
     var sum = function(num1, num2) {
         return num1 + num2;
     };
-    {% endhighlight %}
+
 
 
 
@@ -100,14 +99,14 @@ sum（）函数只是简单地增加了两个参数，并返回结果。唯一�
 
 
 
-    {% highlight javascript %}
+
     var sum = (num1, num2) => { return num1 + num2; }
 
     // 相当于:
     var sum = function(num1, num2) {
         return num1 + num2;
     };
-    {% endhighlight %}
+
 
 
 
@@ -119,7 +118,7 @@ sum（）函数只是简单地增加了两个参数，并返回结果。唯一�
 
 
 
-    {% highlight javascript %}
+
     var getTempItem = id => ({ id: id, name: "Temp" });
 
     // 相当于:
@@ -130,7 +129,7 @@ sum（）函数只是简单地增加了两个参数，并返回结果。唯一�
             name: "Temp"
         };
     };
-    {% endhighlight %}
+
 
 
 
@@ -154,7 +153,7 @@ JavaScript中最常见的错误来自于函数内部this的绑定问题，由于
 
 
 
-    {% highlight javascript %}
+
     var PageHandler = {
 
         id: "123456",
@@ -169,7 +168,7 @@ JavaScript中最常见的错误来自于函数内部this的绑定问题，由于
             console.log("Handling " + type  + " for " + this.id);
         }
     };
-    {% endhighlight %}
+
 
 
 
@@ -187,7 +186,7 @@ JavaScript中最常见的错误来自于函数内部this的绑定问题，由于
 
 
 
-    {% highlight javascript %}
+
     var PageHandler = {
 
         id: "123456",
@@ -203,7 +202,7 @@ JavaScript中最常见的错误来自于函数内部this的绑定问题，由于
         }
     };
 
-    {% endhighlight %}
+
 
 
 
@@ -220,7 +219,7 @@ JavaScript中最常见的错误来自于函数内部this的绑定问题，由于
 
 
 
-    {% highlight javascript %}
+
     var PageHandler = {
 
         id: "123456",
@@ -234,7 +233,7 @@ JavaScript中最常见的错误来自于函数内部this的绑定问题，由于
             console.log("Handling " + type  + " for " + this.id);
         }
     };
-    {% endhighlight %}
+
 
 
 
@@ -252,11 +251,11 @@ JavaScript中最常见的错误来自于函数内部this的绑定问题，由于
 
 
 
-    {% highlight javascript %}
+
     var result = arr.sort(function(a, b) {
         return a - b;
     });
-    {% endhighlight %}
+
 
 
 
@@ -268,9 +267,9 @@ JavaScript中最常见的错误来自于函数内部this的绑定问题，由于
 
 
 
-    {% highlight javascript %}
+
     var result = arr.sort((a, b) => a - b);
-    {% endhighlight %}
+
 
 
 

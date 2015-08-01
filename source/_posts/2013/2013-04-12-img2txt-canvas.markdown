@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2013-04-12 03:26:29+00:00
@@ -33,7 +32,7 @@ HTML：一个canvas元素#cv，一个字符画容器#txt 。
 css：由于每一行用p来填充，所以p的height和font-size大小应该一致都是12px，这样可以避免每行出现空隙。
 
     
-    {% highlight css %}
+
     * {margin: 0;padding: 0;}
     body {font-size: 12px; margin: 10px; font-family: simsun; background: #fff;}
     p { height: 12px;}
@@ -41,7 +40,7 @@ css：由于每一行用p来填充，所以p的height和font-size大小应该一
     span {width: 12px;}
     #cv, #txt {float: left;}
     #cv { margin-right: 5px;}
-    {% endhighlight %}
+
 
 
 
@@ -49,7 +48,7 @@ css：由于每一行用p来填充，所以p的height和font-size大小应该一
 javascript：请看注释和下面的解释。
 
     
-    {% highlight javascript %}
+
     var cv = document.getElementById('cv');
     var c = cv.getContext('2d');
     var txtDiv = document.getElementById('txt');
@@ -121,7 +120,7 @@ javascript：请看注释和下面的解释。
             img.src = reader.result;
         }
     }
-    {% endhighlight %}
+
 
 
 

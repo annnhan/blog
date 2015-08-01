@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2011-08-30 14:13:04+00:00

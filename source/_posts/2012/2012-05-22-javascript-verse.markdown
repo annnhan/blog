@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2012-05-22 08:39:52+00:00
@@ -18,7 +17,7 @@ tags:
 1. 取整同时转成数值型：
 
     
-    {% highlight javascript %}
+
     '10.567890'|0
     //结果: 10
     '10.567890'^0
@@ -27,7 +26,7 @@ tags:
     //结果: -2
     ~~-2.23456789
     //结果: -2
-    {% endhighlight %}
+
 
 
 
@@ -35,10 +34,10 @@ tags:
 2. 日期转数值：
 
     
-    {% highlight javascript %}
+
     var d = +new Date();
     //结果: 1295698416792
-    {% endhighlight %}
+
 
 
 <!-- more -->
@@ -46,9 +45,9 @@ tags:
 3. 类数组对象转数组：
 
     
-    {% highlight javascript %}
+
     var arr = [].slice.call(arguments);
-    {% endhighlight %}
+
 
 
 
@@ -56,10 +55,10 @@ tags:
 4. 漂亮的随机码
 
     
-    {% highlight javascript %}
+
     Math.random().toString(16).substring(2); //14位
     Math.random().toString(36).substring(2); //11位
-    {% endhighlight %}
+
 
 
 
@@ -67,12 +66,12 @@ tags:
 5. 合并数组：
 
     
-    {% highlight javascript %}
+
     var a = [1,2,3];
     var b = [4,5,6];
     Array.prototype.push.apply(a, b);
     uneval(a); //[1,2,3,4,5,6]
-    {% endhighlight %}
+
 
 
 
@@ -80,11 +79,11 @@ tags:
 6. 用0补全位数：
 
     
-    {% highlight javascript %}
+
     function prefixInteger(num, length) {
       return (num / Math.pow(10, length)).toFixed(length).substr(2);
     }
-    {% endhighlight %}
+
 
 
 
@@ -92,9 +91,9 @@ tags:
 7. 交换值：
 
     
-    {% highlight javascript %}
+
     a= [b, b=a][0];
-    {% endhighlight %}
+
 
 
 
@@ -102,13 +101,13 @@ tags:
 8. 将一个数组插入另一个数组的指定位置：
 
     
-    {% highlight javascript %}
+
     var a = [1,2,3,7,8,9];
     var b = [4,5,6];
     var insertIndex = 3;
     a.splice.apply(a, Array.concat(insertIndex, 0, b));
     // a: 1,2,3,4,5,6,7,8,9
-    {% endhighlight %}
+
 
 
 
@@ -116,10 +115,10 @@ tags:
 9. 删除数组元素：
 
     
-    {% highlight javascript %}
+
     var a = [1,2,3,4,5];
     a.splice(3,1);
-    {% endhighlight %}
+
 
 
 
@@ -127,10 +126,10 @@ tags:
 10. 快速取数组最大和最小值
 
     
-    {% highlight javascript %}
+
     Math.max.apply(Math, [1,2,3]); //3
     Math.min.apply(Math, [1,2,3]); //1
-    {% endhighlight %}
+
 
 
 
@@ -138,7 +137,7 @@ tags:
 11. 条件判断：
 
     
-    {% highlight javascript %}
+
     var a = b && 1;
     //相当于:
     if (b) {
@@ -154,7 +153,7 @@ tags:
     } else {
       a = 1;
     }
-    {% endhighlight %}
+
 
 
 
@@ -162,7 +161,7 @@ tags:
 12. 判断IE:
 
 
-    {% highlight javascript %}
+
     var ie = /*@cc_on !@*/false;
-    {% endhighlight %}
+
 

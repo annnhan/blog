@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2013-04-07 17:22:59+00:00
@@ -31,7 +30,7 @@ Ant最初是为Java量身定做的工程构建工具，但因为其简单的XML�
 
     
     
-    {% highlight xml %}
+
     <project default="build" name="61">
 
 
@@ -97,7 +96,7 @@ Ant最初是为Java量身定做的工程构建工具，但因为其简单的XML�
         </target>
 
     </project>
-    {% endhighlight %}
+
 
 
 

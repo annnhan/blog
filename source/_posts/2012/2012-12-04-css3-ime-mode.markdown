@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2012-12-04 09:45:20+00:00
@@ -30,7 +29,7 @@ disabled : 禁用输入法编辑器；该输入法编辑器也许不会被用户
 
     
     
-    {% highlight html %}
+
     <html>
      <head>
       <title> New Document </title>
@@ -46,7 +45,7 @@ disabled : 禁用输入法编辑器；该输入法编辑器也许不会被用户
     </form>
      </body>
     </html>
-    {% endhighlight %}
+
 
 
 

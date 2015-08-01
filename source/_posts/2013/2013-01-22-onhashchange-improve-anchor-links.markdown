@@ -1,4 +1,3 @@
----
 author: 阿安
 comments: true
 date: 2013-01-22 11:48:59+00:00
@@ -18,7 +17,7 @@ tags:
 锚链接是大家再熟悉不过的了，它允许用户通过一个链接跳转到当前页面的指定内容。一般创建一个锚链接的方法就像下面这样，用户点击a标签，浏览器将跳转的id为content的div来显示其内容。。
 
     
-    {% highlight html %}
+
     <a href="#content">跳到id为content的标签</a>
 
 
@@ -26,7 +25,7 @@ tags:
     <div id="content">
 
     </div>
-    {% endhighlight %}
+
 
 
 
@@ -38,7 +37,7 @@ tags:
 如果用户触发锚链接时候，焦点也跟着跳转到相应的目标元素，那么问题就可以解决了。在锚链接被触发时候， location.hash会储存a标签的href；这其实也就是目标元素的id，因此我们可以在onhashchange事件被触发的时候，获取相应元素，然后调用focus()方法，使其获取焦点。但是，如果获取到的是个span、div、p等非表单元素，focus()方法却不能起作用。解决的办法是在调用focus()之前，设置其tabIndex属性成一个整数，这样非表单元素也能获得焦点了。
 
     
-    {% highlight javascript %}
+
     var fixedJumpLink = function () {
                 var el, hash = location.hash.substr(1);
                 if (hash == '') {
@@ -51,7 +50,7 @@ tags:
                 el.focus();
             }
     window.onhashchange = fixedJumpLink;
-    {% endhighlight %}
+
 
 
 
@@ -60,7 +59,7 @@ tags:
 在版本低于IE8的浏览器中，onhashchange事件是不被支持的，我的办法是定时检查location.hash，如果location.hash发生变化，则调用fixedJumpLink函数，已达到兼容低版本IE浏览器的目的。
 
     
-    {% highlight javascript %}
+
     var fixedJumpLink = function () {
         var el, hash = location.hash.substr(1);
         if (hash == '') {
@@ -94,7 +93,7 @@ tags:
     } else {
         window.onhashchange = fixedJumpLink;
     }
-    {% endhighlight %}
+
 
 
 
