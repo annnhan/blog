@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ECMAScript 5中新增的数组方法 | 安·记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ECMAScript 5中定义了9个新的数组方法，用于遍历、映射、过滤、检测、简化和搜索数组。
+在开始介绍之前，很有必要对这几个新增的数组方法做一个概述。首先，大多数方法的第一个参数接收一个函数，并且对数组的每个元素（或者一些元素）调用一次该函数。如果是稀疏数组，对不存在的元素不调用传递的函数。在大多数情况下，调用提供的函数使用3个参数：数组元素、数组元素的索引值和数组本身。通常，知需要第一个参数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECMAScript 5中新增的数组方法">
+<meta property="og:url" content="http://annnn.me/2012-ecmascript5-new-array-method/index.html">
+<meta property="og:site_name" content="安·记">
+<meta property="og:description" content="ECMAScript 5中定义了9个新的数组方法，用于遍历、映射、过滤、检测、简化和搜索数组。
+在开始介绍之前，很有必要对这几个新增的数组方法做一个概述。首先，大多数方法的第一个参数接收一个函数，并且对数组的每个元素（或者一些元素）调用一次该函数。如果是稀疏数组，对不存在的元素不调用传递的函数。在大多数情况下，调用提供的函数使用3个参数：数组元素、数组元素的索引值和数组本身。通常，知需要第一个参数">
+<meta property="og:updated_time" content="2015-08-01T14:05:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ECMAScript 5中新增的数组方法">
+<meta name="twitter:description" content="ECMAScript 5中定义了9个新的数组方法，用于遍历、映射、过滤、检测、简化和搜索数组。
+在开始介绍之前，很有必要对这几个新增的数组方法做一个概述。首先，大多数方法的第一个参数接收一个函数，并且对数组的每个元素（或者一些元素）调用一次该函数。如果是稀疏数组，对不存在的元素不调用传递的函数。在大多数情况下，调用提供的函数使用3个参数：数组元素、数组元素的索引值和数组本身。通常，知需要第一个参数">
+  
+    <link rel="alternative" href="/atom.xml" title="安·记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">安·记</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://annnn.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2012-ecmascript5-new-array-method" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2012-ecmascript5-new-array-method/" class="article-date">
+  <time datetime="2012-10-27T07:57:58.000Z" itemprop="datePublished">2012-10-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ECMAScript 5中新增的数组方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ECMAScript 5中定义了9个新的数组方法，用于遍历、映射、过滤、检测、简化和搜索数组。</p>
+<p>在开始介绍之前，很有必要对这几个新增的数组方法做一个概述。首先，大多数方法的第一个参数接收一个函数，并且对数组的每个元素（或者一些元素）调用一次该函数。如果是稀疏数组，对不存在的元素不调用传递的函数。在大多数情况下，调用提供的函数使用3个参数：数组元素、数组元素的索引值和数组本身。通常，知需要第一个参数，可忽略后面2个参数。大多数ECMAScript 5数组方法的第一个参数是一个函数，第二个参数是可选的。如果有第二个参数，则第一个参数（被调用的函数）会被看做是第二个参数的方法。也就是说，第一个参数（被调用的函数）的this关键字指向的是第二个参数。被调用的函数的返回值非常重要，但是不同的方法处理返回值的方式也不一样。ECMAScript 5中的数组方法都不会修改原始数组本身，但是，方法所传递的调用函数是可以改变原始数组本身的。<a id="more"></a></p>
+<p><strong>forEach()</strong><br>forEach()方法从头到尾遍历数组，为每个元素调用指定的函数。如上所述，调用的函数作为forEach()方法的第一个参数然后forEach()方法使用三个参数调用该函数：数组元素、数组元素的索引值和数组本身。如果你只关心数组元素的值，可编写只有一个参数的函数——额外的2个参数将被忽略：</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];
+
+<span class="comment">//计算数组元素的和</span>
+<span class="keyword">var</span> sum = <span class="number">0</span>;
+arr.forEach(<span class="function"><span class="keyword">function</span><span class="params">(v)</span><span class="comment">{
+    sum += v;
+}</span>);</span>
+console.log(sum); <span class="comment">//15</span>
+
+<span class="comment">//每个元素的值自加1</span>
+arr.forEach(<span class="function"><span class="keyword">function</span><span class="params">(v, i, a)</span><span class="comment">{
+    a[i] = v + 1;
+}</span>);</span>
+console.log(arr); <span class="comment">//[2, 3, 4, 5, 6]</span>
+</code></pre><p>注意，forEach()方法无法在所有元素都传递给调用函数之前终止，也就是说，它始终都会遍历完，没有类似与for循环中的break语句。如果要提前终止，必须把forEach()方法放在一个try块中，并却抛出一个异常。如果forEach()方法抛出foreach.break异常，循环会提前终止。</p>
+<p><strong>map()</strong><br>map()方法将调用数组的每个元素传递给指定函数，并返回一个数组，它包含该函数的返回值。例如：</p>
+<pre><code>var arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];
+var b = arr.<span class="built_in">map</span>(function(x){
+    <span class="keyword">return</span> x * x;
+});
+console.<span class="built_in">log</span>(b) <span class="comment">//[1, 4, 9, 16, 25]</span>
+</code></pre><p>传递给map()的函数的调用方式跟跟传递给forEach()的函数的调用方式一样。但是传递map()的函数应该有一个返回值。注意，map()安徽的是新数组，他不修改原始数组本身，如果袁术数组是稀疏数组，返回的数组也是稀疏数组：它具有相同的长度，相同的缺失元素。</p>
+<p><strong>filter()</strong><br>filter()方法返回的数组元素是原始数组的一个子集。传递的函数是用来逻辑判断的：该函数返回true或者false。如果返回值为true或是能转化true的值，那么传递给判断函数的元素就是filter()返回的子集的成员，它将被添加到作为filter()方法的返回值的数组中，例如：</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];
+<span class="keyword">var</span> b = arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>{
+    <span class="keyword">return</span> x &gt; <span class="number">3</span>;
+});
+<span class="keyword">var</span> c = arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">x, i</span>)</span>{
+    <span class="keyword">return</span> i % <span class="number">2</span> == <span class="number">0</span>;
+});
+<span class="built_in">console</span>.log(b) <span class="comment">//[4, 5]</span>
+<span class="built_in">console</span>.log(c) <span class="comment">//[1, 3, 5]</span>
+</code></pre><p>注意，filter()方法会跳过稀疏数组中的缺失元素，它返回的数组总是稠密的。我们可以利用这点来压缩稀疏数组中的空缺：</p>
+<pre><code>var arr = [<span class="number">1</span>, , , , <span class="number">5</span>]<span class="comment">;</span>
+var b = arr.filter(function(){
+    <span class="keyword">return</span> <span class="literal">true</span><span class="comment">;</span>
+})<span class="comment">;</span>
+console.log(b) //[<span class="number">1</span>, <span class="number">5</span>]
+</code></pre><p>甚至，压缩空缺并删除undefined和null元素，可以这样使用：</p>
+<pre><code>var arr = [<span class="number">1</span>, , , , undefined, null, <span class="number">5</span>]<span class="comment">;</span>
+var b = arr.filter(function(x){
+    <span class="keyword">return</span> x !== undefined &amp;&amp; x !== null<span class="comment">;</span>
+})<span class="comment">;</span>
+console.log(b) //[<span class="number">1</span>, <span class="number">5</span>]
+</code></pre><p><strong>every()和some()</strong><br>every()和some()是数组的逻辑判断，它们对数组元素运用指定函数进行判定，返回一个布尔值。<br>every()方法就像数学中的“针对所有”的量词∀：当且仅当数组中所有元素调用判定函数都返回true时，every()方法才返回true，否则，返回false。<br>some()方法就像数学中的“存在”的量词∃：当数组中至少有一个元素调用判定函数返回true时，some()方法就返回true,当且仅当数组中所有元素调用判定函数都返回false时，some()方法才返回false。</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];
+<span class="keyword">var</span> b = arr.every(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>{
+    <span class="keyword">return</span> x &lt; <span class="number">10</span>;
+});
+<span class="keyword">var</span> c = arr.every(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>{
+    <span class="keyword">return</span> x % <span class="number">2</span> == <span class="number">0</span>;
+});
+<span class="keyword">var</span> d = arr.some(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>{
+    <span class="keyword">return</span> x &gt; <span class="number">10</span>;
+});
+<span class="keyword">var</span> e = arr.some(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>{
+    <span class="keyword">return</span> x % <span class="number">2</span> == <span class="number">0</span>;
+});
+<span class="built_in">console</span>.log(b) <span class="comment">//true</span>
+<span class="built_in">console</span>.log(c) <span class="comment">//false</span>
+<span class="built_in">console</span>.log(d) <span class="comment">//false</span>
+<span class="built_in">console</span>.log(e) <span class="comment">//true</span>
+</code></pre><p>注意，一旦every()和some()确定该返回什么值，他们就回通知遍历数组。some()在判定函数第一次返回true的时候就返回true;但是如果判定函数一直返回false，它就会遍历整个数组。every()相反，在判定函数第一次返回false的时候就返回false;但是如果判定函数一直返回true，它就会遍历整个数组。根据数学逻辑，空数组调用时候，some()返回false，every()返回true。</p>
+<p><strong>reduce()和reduceRight()</strong><br>reduce()和reduceRight()方法使用知道的函数将数组进行组合，生成单个值。这在函数式编程当中是非常常见的操作，也可以称之为“注入”和“折叠”。例如：</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];
+<span class="keyword">var</span> b = arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>)</span>{ <span class="comment">//数组求和</span>
+    <span class="keyword">return</span> x + y;
+}, <span class="number">0</span>);
+<span class="keyword">var</span> c = arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>)</span>{ <span class="comment">//数组求积</span>
+    <span class="keyword">return</span> x * y;
+}, <span class="number">1</span>);
+<span class="keyword">var</span> d = arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>)</span>{ <span class="comment">//求最大值</span>
+    <span class="keyword">return</span> x &gt; y ? x : y;
+});
+<span class="built_in">console</span>.log(b) <span class="comment">//15</span>
+<span class="built_in">console</span>.log(c) <span class="comment">//120</span>
+<span class="built_in">console</span>.log(d) <span class="comment">//5</span>
+</code></pre><p>reduce()需要2个参数，第一个是执行简化操作的函数，简化函数的任务就是定义一个方法将两个值化简成一个值，并返回简化后的值。第2个（可选）参数是传递给简化函数的一个初始值。reduce()所使用的函数的第一个参数是目前位置简化操作的累计结果，如果是第一次调用，那么第一个参数是一个初始值，它是就是传递给reduce()函数的第2个参数，如果没有指定其初始值，它将使用数组的第一个元素作为初始值。这意味着在上面的求和和求积的例子中，也可以省略第二个参数（初始值参数）。</p>
+<p>reduceRight()的工作原理和reduce()一样，不同的是它按照数组元素的索引值从高到低（从左到右）处理数组。如果简化操作是从左到右，你可能想使用它，例如：</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
+<span class="keyword">var</span> b = arr.reduceRight(<span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>)</span>{ <span class="comment">//乘方操作，顺序为2^(3^4)</span>
+    <span class="keyword">return</span> <span class="built_in">Math</span>.pow(y, x);
+});
+</code></pre><p><strong>indexOf()和lastIndexOf()</strong><br>类似于string类型的indexOf()和lastIndexOf()，搜索整个数组中具有给定值的元素，如果找到，返回第一个找到的元素的索引，如果没有找到，返回-1。indexOf()从头到尾搜索，lastIndexOf()则相反。</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>];
+<span class="built_in">console</span>.log(arr.indexOf(<span class="string">'b'</span>)) <span class="comment">//1</span>
+<span class="built_in">console</span>.log(arr.lastIndexOf(<span class="string">'e'</span>)) <span class="comment">//4</span>
+</code></pre><p><em>参考资料——《Javascript权威指南》</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://annnn.me/2012-ecmascript5-new-array-method/" data-id="cicywds5100c3eatqmxkms72y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ECMAScript/">ECMAScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/every/">every</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/filter/">filter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/forEach/">forEach</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/map/">map</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/reduce/">reduce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/reduceRight/">reduceRight</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/some/">some</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2012-euclidean/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          欧几里德算法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2012-aptana3-chinese-zencoding-svn-jquery/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Aptana Studio 3常用配置：汉化，zen-coding，SVN，jquery提示。</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/HTML5-CSS3/">HTML5/CSS3</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JavaScript/">JavaScript</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/javascript/">javascript</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/发现与分享/">发现与分享</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/工具-资源/">工具/资源</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/服务器/">服务器</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/未分类/">未分类</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ActiveX/">ActiveX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/AddJS/">AddJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Ant/">Ant</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ECMAScript/">ECMAScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ECMAScript6/">ECMAScript6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Event/">Event</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/IDE/">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/IE-Tab/">IE Tab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/IE10/">IE10</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/IE6/">IE6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/IIS/">IIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/IT工程师/">IT工程师</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Intellij/">Intellij</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Intellij-IDEA/">Intellij IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JQuery/">JQuery</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JS3D/">JS3D</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JS扫雷/">JS扫雷</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/">JavaScript</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript权威指南/">JavaScript权威指南</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Link/">Link</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/PM/">PM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ReRes/">ReRes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rewrite/">Rewrite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/W3C/">W3C</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/WHATWG/">WHATWG</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/WebStorm/">WebStorm</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Webstorm使用指南/">Webstorm使用指南</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Webstorm快捷键/">Webstorm快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Webstorm配置/">Webstorm配置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Windows/">Windows</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/WordPress/">WordPress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/absolute/">absolute</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ajax/">ajax</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/algorithm/">algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/animat/">animat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/aptana/">aptana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/arguments/">arguments</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/assigin/">assigin</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/blending/">blending</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/build-xml/">build.xml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/callee/">callee</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/caller/">caller</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/caniuse/">caniuse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/">canvas</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/chinese/">chinese</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/chorme/">chorme</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/chrome/">chrome</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/className/">className</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/confirm/">confirm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/cross/">cross</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css3/">css3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/domain/">domain</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ecmascript/">ecmascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/every/">every</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/fiddler/">fiddler</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/filter/">filter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/focus/">focus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/font-family/">font-family</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/forEach/">forEach</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/form/">form</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/function/">function</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/grunt-cptpl/">grunt-cptpl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hack/">hack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/host/">host</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html5/">html5</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/http/">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ie/">ie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iframe/">iframe</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/image/">image</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ime-mode/">ime-mode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/img/">img</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/imitator/">imitator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/jekyll/">jekyll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/json/">json</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/keymap/">keymap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/kindle/">kindle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ksend/">ksend</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/local/">local</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/map/">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/minesweeping/">minesweeping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/mock/">mock</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/onbeforeunload/">onbeforeunload</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/onhashchange/">onhashchange</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/onunload/">onunload</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/php/">php</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/phpstorm/">phpstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/postMessage/">postMessage</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/presentation/">presentation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/promise/">promise</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/pycharm/">pycharm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/reduce/">reduce</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/reduceRight/">reduceRight</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/remote/">remote</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/request/">request</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/response/">response</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/server/">server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/smarty/">smarty</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/some/">some</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/stave/">stave</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/storage/">storage</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/svn/">svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/this/">this</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/three-js/">three.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/useragent/">useragent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/video/">video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/window/">window</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/windows7/">windows7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/zen-coding/">zen-coding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/乔布斯/">乔布斯</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/事件/">事件</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/产品经理/">产品经理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/克隆/">克隆</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/函数/">函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/函数对象/">函数对象</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/回车/">回车</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/固定链接/">固定链接</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/图片/">图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/复制/">复制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/字符串/">字符串</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/字符画/">字符画</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/对象/">对象</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/开发人员工具/">开发人员工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/开发难度/">开发难度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/拷贝/">拷贝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/换行/">换行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/最大公约数/">最大公约数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/枚举法/">枚举法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/欧几里德算法/">欧几里德算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/沟通与合作/">沟通与合作</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/瀑布流布局/">瀑布流布局</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/犀牛书/">犀牛书</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/红客/">红客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/缓存，IE/">缓存，IE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/网银/">网银</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/花屏/">花屏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/苹果/">苹果</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/菲律宾国防部/">菲律宾国防部</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/虚拟主机/">虚拟主机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/诗句/">诗句</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/调试工具/">调试工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/辗转相除法/">辗转相除法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/辞职/">辞职</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/连连看/">连连看</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/ActiveX/" style="font-size: 10px;">ActiveX</a> <a href="/blog/tags/AddJS/" style="font-size: 12px;">AddJS</a> <a href="/blog/tags/Ant/" style="font-size: 10px;">Ant</a> <a href="/blog/tags/ECMAScript/" style="font-size: 10px;">ECMAScript</a> <a href="/blog/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/blog/tags/Event/" style="font-size: 10px;">Event</a> <a href="/blog/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/blog/tags/IE-Tab/" style="font-size: 10px;">IE Tab</a> <a href="/blog/tags/IE10/" style="font-size: 10px;">IE10</a> <a href="/blog/tags/IE6/" style="font-size: 10px;">IE6</a> <a href="/blog/tags/IIS/" style="font-size: 10px;">IIS</a> <a href="/blog/tags/IT工程师/" style="font-size: 10px;">IT工程师</a> <a href="/blog/tags/Intellij/" style="font-size: 10px;">Intellij</a> <a href="/blog/tags/Intellij-IDEA/" style="font-size: 10px;">Intellij IDEA</a> <a href="/blog/tags/JQuery/" style="font-size: 16px;">JQuery</a> <a href="/blog/tags/JS3D/" style="font-size: 10px;">JS3D</a> <a href="/blog/tags/JS扫雷/" style="font-size: 10px;">JS扫雷</a> <a href="/blog/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/blog/tags/JavaScript权威指南/" style="font-size: 10px;">JavaScript权威指南</a> <a href="/blog/tags/Link/" style="font-size: 10px;">Link</a> <a href="/blog/tags/PM/" style="font-size: 10px;">PM</a> <a href="/blog/tags/ReRes/" style="font-size: 10px;">ReRes</a> <a href="/blog/tags/Rewrite/" style="font-size: 10px;">Rewrite</a> <a href="/blog/tags/W3C/" style="font-size: 10px;">W3C</a> <a href="/blog/tags/WHATWG/" style="font-size: 10px;">WHATWG</a> <a href="/blog/tags/WebStorm/" style="font-size: 18px;">WebStorm</a> <a href="/blog/tags/Webstorm使用指南/" style="font-size: 10px;">Webstorm使用指南</a> <a href="/blog/tags/Webstorm快捷键/" style="font-size: 10px;">Webstorm快捷键</a> <a href="/blog/tags/Webstorm配置/" style="font-size: 10px;">Webstorm配置</a> <a href="/blog/tags/Windows/" style="font-size: 12px;">Windows</a> <a href="/blog/tags/WordPress/" style="font-size: 10px;">WordPress</a> <a href="/blog/tags/absolute/" style="font-size: 10px;">absolute</a> <a href="/blog/tags/ajax/" style="font-size: 12px;">ajax</a> <a href="/blog/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/blog/tags/animat/" style="font-size: 10px;">animat</a> <a href="/blog/tags/aptana/" style="font-size: 10px;">aptana</a> <a href="/blog/tags/arguments/" style="font-size: 10px;">arguments</a> <a href="/blog/tags/assigin/" style="font-size: 10px;">assigin</a> <a href="/blog/tags/blending/" style="font-size: 10px;">blending</a> <a href="/blog/tags/build-xml/" style="font-size: 10px;">build.xml</a> <a href="/blog/tags/callee/" style="font-size: 10px;">callee</a> <a href="/blog/tags/caller/" style="font-size: 10px;">caller</a> <a href="/blog/tags/caniuse/" style="font-size: 10px;">caniuse</a> <a href="/blog/tags/canvas/" style="font-size: 14px;">canvas</a> <a href="/blog/tags/chinese/" style="font-size: 10px;">chinese</a> <a href="/blog/tags/chorme/" style="font-size: 12px;">chorme</a> <a href="/blog/tags/chrome/" style="font-size: 16px;">chrome</a> <a href="/blog/tags/className/" style="font-size: 10px;">className</a> <a href="/blog/tags/confirm/" style="font-size: 10px;">confirm</a> <a href="/blog/tags/cross/" style="font-size: 10px;">cross</a> <a href="/blog/tags/css/" style="font-size: 12px;">css</a> <a href="/blog/tags/css3/" style="font-size: 12px;">css3</a> <a href="/blog/tags/domain/" style="font-size: 10px;">domain</a> <a href="/blog/tags/ecmascript/" style="font-size: 10px;">ecmascript</a> <a href="/blog/tags/every/" style="font-size: 10px;">every</a> <a href="/blog/tags/fiddler/" style="font-size: 10px;">fiddler</a> <a href="/blog/tags/filter/" style="font-size: 10px;">filter</a> <a href="/blog/tags/focus/" style="font-size: 10px;">focus</a> <a href="/blog/tags/font-family/" style="font-size: 10px;">font-family</a> <a href="/blog/tags/forEach/" style="font-size: 10px;">forEach</a> <a href="/blog/tags/form/" style="font-size: 10px;">form</a> <a href="/blog/tags/function/" style="font-size: 12px;">function</a> <a href="/blog/tags/github/" style="font-size: 10px;">github</a> <a href="/blog/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/blog/tags/grunt-cptpl/" style="font-size: 10px;">grunt-cptpl</a> <a href="/blog/tags/hack/" style="font-size: 10px;">hack</a> <a href="/blog/tags/host/" style="font-size: 10px;">host</a> <a href="/blog/tags/html5/" style="font-size: 14px;">html5</a> <a href="/blog/tags/http/" style="font-size: 10px;">http</a> <a href="/blog/tags/ie/" style="font-size: 10px;">ie</a> <a href="/blog/tags/iframe/" style="font-size: 14px;">iframe</a> <a href="/blog/tags/image/" style="font-size: 10px;">image</a> <a href="/blog/tags/ime-mode/" style="font-size: 10px;">ime-mode</a> <a href="/blog/tags/img/" style="font-size: 10px;">img</a> <a href="/blog/tags/imitator/" style="font-size: 10px;">imitator</a> <a href="/blog/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/blog/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/blog/tags/js/" style="font-size: 12px;">js</a> <a href="/blog/tags/json/" style="font-size: 10px;">json</a> <a href="/blog/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/blog/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/blog/tags/ksend/" style="font-size: 10px;">ksend</a> <a href="/blog/tags/local/" style="font-size: 10px;">local</a> <a href="/blog/tags/map/" style="font-size: 10px;">map</a> <a href="/blog/tags/minesweeping/" style="font-size: 10px;">minesweeping</a> <a href="/blog/tags/mock/" style="font-size: 10px;">mock</a> <a href="/blog/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/blog/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/blog/tags/onbeforeunload/" style="font-size: 12px;">onbeforeunload</a> <a href="/blog/tags/onhashchange/" style="font-size: 10px;">onhashchange</a> <a href="/blog/tags/onunload/" style="font-size: 10px;">onunload</a> <a href="/blog/tags/php/" style="font-size: 10px;">php</a> <a href="/blog/tags/phpstorm/" style="font-size: 10px;">phpstorm</a> <a href="/blog/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/blog/tags/presentation/" style="font-size: 10px;">presentation</a> <a href="/blog/tags/promise/" style="font-size: 10px;">promise</a> <a href="/blog/tags/pycharm/" style="font-size: 10px;">pycharm</a> <a href="/blog/tags/reduce/" style="font-size: 10px;">reduce</a> <a href="/blog/tags/reduceRight/" style="font-size: 10px;">reduceRight</a> <a href="/blog/tags/remote/" style="font-size: 10px;">remote</a> <a href="/blog/tags/request/" style="font-size: 10px;">request</a> <a href="/blog/tags/response/" style="font-size: 10px;">response</a> <a href="/blog/tags/server/" style="font-size: 10px;">server</a> <a href="/blog/tags/smarty/" style="font-size: 10px;">smarty</a> <a href="/blog/tags/some/" style="font-size: 10px;">some</a> <a href="/blog/tags/stave/" style="font-size: 10px;">stave</a> <a href="/blog/tags/storage/" style="font-size: 10px;">storage</a> <a href="/blog/tags/svn/" style="font-size: 10px;">svn</a> <a href="/blog/tags/this/" style="font-size: 10px;">this</a> <a href="/blog/tags/three-js/" style="font-size: 10px;">three.js</a> <a href="/blog/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/blog/tags/useragent/" style="font-size: 10px;">useragent</a> <a href="/blog/tags/video/" style="font-size: 10px;">video</a> <a href="/blog/tags/vim/" style="font-size: 10px;">vim</a> <a href="/blog/tags/window/" style="font-size: 10px;">window</a> <a href="/blog/tags/windows7/" style="font-size: 10px;">windows7</a> <a href="/blog/tags/zen-coding/" style="font-size: 10px;">zen-coding</a> <a href="/blog/tags/乔布斯/" style="font-size: 10px;">乔布斯</a> <a href="/blog/tags/事件/" style="font-size: 12px;">事件</a> <a href="/blog/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/blog/tags/克隆/" style="font-size: 10px;">克隆</a> <a href="/blog/tags/函数/" style="font-size: 10px;">函数</a> <a href="/blog/tags/函数对象/" style="font-size: 10px;">函数对象</a> <a href="/blog/tags/回车/" style="font-size: 10px;">回车</a> <a href="/blog/tags/固定链接/" style="font-size: 10px;">固定链接</a> <a href="/blog/tags/图片/" style="font-size: 10px;">图片</a> <a href="/blog/tags/复制/" style="font-size: 10px;">复制</a> <a href="/blog/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/blog/tags/字符画/" style="font-size: 10px;">字符画</a> <a href="/blog/tags/对象/" style="font-size: 10px;">对象</a> <a href="/blog/tags/开发人员工具/" style="font-size: 10px;">开发人员工具</a> <a href="/blog/tags/开发难度/" style="font-size: 10px;">开发难度</a> <a href="/blog/tags/拷贝/" style="font-size: 10px;">拷贝</a> <a href="/blog/tags/换行/" style="font-size: 10px;">换行</a> <a href="/blog/tags/最大公约数/" style="font-size: 10px;">最大公约数</a> <a href="/blog/tags/枚举法/" style="font-size: 10px;">枚举法</a> <a href="/blog/tags/欧几里德算法/" style="font-size: 10px;">欧几里德算法</a> <a href="/blog/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/blog/tags/沟通与合作/" style="font-size: 10px;">沟通与合作</a> <a href="/blog/tags/瀑布流布局/" style="font-size: 10px;">瀑布流布局</a> <a href="/blog/tags/犀牛书/" style="font-size: 10px;">犀牛书</a> <a href="/blog/tags/红客/" style="font-size: 10px;">红客</a> <a href="/blog/tags/缓存，IE/" style="font-size: 10px;">缓存，IE</a> <a href="/blog/tags/网银/" style="font-size: 10px;">网银</a> <a href="/blog/tags/花屏/" style="font-size: 10px;">花屏</a> <a href="/blog/tags/苹果/" style="font-size: 10px;">苹果</a> <a href="/blog/tags/菲律宾国防部/" style="font-size: 10px;">菲律宾国防部</a> <a href="/blog/tags/虚拟主机/" style="font-size: 10px;">虚拟主机</a> <a href="/blog/tags/诗句/" style="font-size: 10px;">诗句</a> <a href="/blog/tags/调试工具/" style="font-size: 10px;">调试工具</a> <a href="/blog/tags/辗转相除法/" style="font-size: 10px;">辗转相除法</a> <a href="/blog/tags/辞职/" style="font-size: 10px;">辞职</a> <a href="/blog/tags/连连看/" style="font-size: 10px;">连连看</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">七月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">六月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/02/">二月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/09/">九月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/06/">六月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">三月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/02/">二月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/01/">一月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/09/">九月 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/08/">八月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/06/">六月 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/05/">五月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/04/">四月 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/03/">三月 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/02/">二月 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">一月 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/12/">十二月 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">十一月 2012</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/10/">十月 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/09/">九月 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/08/">八月 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/07/">七月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/06/">六月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/05/">五月 2012</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/04/">四月 2012</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/10/">十月 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/09/">九月 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/08/">八月 2011</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2015-caniuse-cmd/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015-imitator/">使用 imitator 实现前后端分离开发中的数据模拟与静态资源映射</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015-smarty-assign/">smarty 模板模板中的 assigin 函数</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015-battery/">新的 JavaScript Battery API</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015-addjs/">使用 AddJS 为网页自动添加自定义javascript脚本</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 阿安<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/blog/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
