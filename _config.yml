@@ -12,8 +12,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://hexo.cssha.com
-root: /
+url: http://annnn.me
+root: /blog/
 permalink: :title/
 permalink_defaults:
 
@@ -44,7 +44,7 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: uncategorized
+default_category: javascript
 category_map:
 tag_map:
 
@@ -68,4 +68,5 @@ theme: landscape
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/hanan198501/blog.git
