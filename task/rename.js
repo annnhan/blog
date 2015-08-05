@@ -20,4 +20,6 @@ function rename(dir) {
     });
 }
 
-rename(postPath);
+module.exports = function () {
+    rename(postPath);
+}
