@@ -21,7 +21,7 @@ tags:
 #### 浏览器支持细节提示
 
 
-关键字，标签，变量，参数和功能的JavaScript代码完成是基于支持DOM的流行的浏览器（IE，火狐等）标准，可以显示在不同浏览器之下的支持细节。
+关键字，标签，变量，参数和功能的javascript代码完成是基于支持DOM的流行的浏览器（IE，火狐等）标准，可以显示在不同浏览器之下的支持细节。
 
 [![](/wp-content/uploads/2012/04/JS_completion.png)](/wp-content/uploads/2012/04/JS_completion.png)
 
@@ -40,7 +40,7 @@ tags:
 #### ECMAScript的Harmony支持
 
 
-WebStorm支持最新的ECMAScript版本，你可以尝试新的功能，每个JavaScript引擎的实现增加了别人所不具备的一些不错的功能，当您使用的目前选定的JavaScript版本不支持，WebStorm将通知您，并建议速战速决：
+WebStorm支持最新的ECMAScript版本，你可以尝试新的功能，每个javascript引擎的实现增加了别人所不具备的一些不错的功能，当您使用的目前选定的javascript版本不支持，WebStorm将通知您，并建议速战速决：
 
 [![](/wp-content/uploads/2012/04/unsupportedJSLangLevelAfter.png)](/wp-content/uploads/2012/04/unsupportedJSLangLevelAfter.png)
 
@@ -50,7 +50,7 @@ WebStorm支持最新的ECMAScript版本，你可以尝试新的功能，每个Ja
 #### 支持CoffeeScript
 
 
-CoffeeScript是一种编程语言，编译JavaScript和增强其简洁性和可读性，同时还增加了一些复杂的功能，像阵列的理解和模式匹配。WebStorm提供您：
+CoffeeScript是一种编程语言，编译javascript和增强其简洁性和可读性，同时还增加了一些复杂的功能，像阵列的理解和模式匹配。WebStorm提供您：
 
 
 
@@ -78,7 +78,7 @@ CoffeeScript是一种编程语言，编译JavaScript和增强其简洁性和可�
 #### 支持Node.js
 
 
-WebStorm允许你调试和验证您的服务器端JavaScript - Node.js的应用。
+WebStorm允许你调试和验证您的服务器端javascript - Node.js的应用。
 
 [![](/wp-content/uploads/2012/04/nodeJSDebugging_thumb.png)](/wp-content/uploads/2012/04/nodeJSDebugging_thumb.png)
 
@@ -89,10 +89,10 @@ WebStorm允许你调试和验证您的服务器端JavaScript - Node.js的应用�
 
 
 
-#### JavaScript的重构
+#### javascript的重构
 
 
-为JavaScript提供的重构功能，让您可以轻松地修改代码结构，以及撤消修改。
+为javascript提供的重构功能，让您可以轻松地修改代码结构，以及撤消修改。
 
 
 
@@ -118,10 +118,10 @@ WebStorm允许你调试和验证您的服务器端JavaScript - Node.js的应用�
 
 
 
-#### JavaScript单元测试
+#### javascript单元测试
 
 
-如果你是一个JavaScript开发人员，你可能知道，您的应用程序的质量和正确性是至关重要的。那么，一致性测试和回归测试正好是你的痛苦少一点。支持JsTestDriver插件。
+如果你是一个javascript开发人员，你可能知道，您的应用程序的质量和正确性是至关重要的。那么，一致性测试和回归测试正好是你的痛苦少一点。支持JsTestDriver插件。
 
 [![](/wp-content/uploads/2012/04/tests-run-results_thumb.png)](/wp-content/uploads/2012/04/tests-run-results_thumb.png)
 
@@ -143,7 +143,7 @@ WebStorm为单元测试提供了一个清晰的画面。从现在开始，JsTest
 #### 代码检查和快速修复
 
 
-为了确保更好的代码质量，WebStorm可以捕捉动态的JavaScript代码中的常见错误...
+为了确保更好的代码质量，WebStorm可以捕捉动态的javascript代码中的常见错误...
 
 ![](/wp-content/uploads/2012/04/JS_inspection.png)
 
@@ -157,30 +157,30 @@ WebStorm为单元测试提供了一个清晰的画面。从现在开始，JsTest
 #### 支持JSLint / JSHint
 
 
-JavaScript代码质量工具集成在IDE中。
+javascript代码质量工具集成在IDE中。
 
 [![](/wp-content/uploads/2012/04/resultOfRunningJSLint.png)](/wp-content/uploads/2012/04/resultOfRunningJSLint.png)
 
 
 
 
-#### 基于Mozilla Firefox的JavaScript调试器
+#### 基于Mozilla Firefox的javascript调试器
 
 
 
 
 
 	
-  * HTML和JavaScript断点
+  * HTML和javascript断点
 
 	
   * 定制断点属性：暂停模式，条件，通过计数
 
 	
-  * 帧，变量和JavaScript调试器
+  * 帧，变量和javascript调试器
 
 	
-  * JavaScript表达式的运行评价
+  * javascript表达式的运行评价
 
 
 
@@ -209,7 +209,7 @@ JavaScript代码质量工具集成在IDE中。
 #### 语言混合编辑
 
 
-支持任何代码中的“外部”和“内部”的语言 - 享受以外的JavaScript代码块，或在JavaScript字符串文字编码的CSS，HTML，SQL等。
+支持任何代码中的“外部”和“内部”的语言 - 享受以外的javascript代码块，或在javascript字符串文字编码的CSS，HTML，SQL等。
 
 [![](/wp-content/uploads/2012/04/IDE_lang_mix.png)](/wp-content/uploads/2012/04/IDE_lang_mix.png)
 
