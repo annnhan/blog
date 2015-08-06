@@ -1,15 +1,12 @@
+title: ubuntu下创建启动器程序的方法。
 author: 阿安
 comments: true
-date: 2014-02-24 07:54:53+00:00
 layout: post
 slug: create-start-program-in-ubuntu
-title: ubuntu下创建启动器程序的方法。
+categories: [工具/资源]
+tags: [pycharm, ubuntu]
 wordpress_id: 1100
-categories:
-- 工具/资源
-tags:
-- pycharm
-- ubuntu
+date: 2014-02-24 07:54:53+00:00
 ---
 
 python的开发工具pycharm每次打开都要在终端下执行sh文件，非常蛋疼，于是我想把它锁定到启动器。但是，在终端下打开的pycharm锁定到启动器以后，如果关闭了，下次点击启动器里的图标，还是无法打开。

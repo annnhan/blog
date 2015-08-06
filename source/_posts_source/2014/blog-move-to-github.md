@@ -4,7 +4,7 @@ comments: true
 layout: post
 slug: blog-move-to-github
 categories: [服务器]
-tags : [github, jekyll]
+tags: [github, jekyll]
 date: 2014-04-01 20:38:00+00:00
 ---
 
