@@ -25,11 +25,11 @@ archive_dir: archive
 category_dir: categorie
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: [static/**/*, cname]
 
 # Writing
 new_post_name: :year-:month-:day-:title.md # File name of new posts
-default_layout: post
+default_layout: false
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
@@ -72,6 +72,7 @@ deploy:
   repo: https://github.com/hanan198501/hanan198501.github.io.git
   branch: master
 
+# Other
 rss: atom.xml
 
 
