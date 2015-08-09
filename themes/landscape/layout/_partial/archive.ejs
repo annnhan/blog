@@ -2,6 +2,7 @@
 
   <!--首页-->
   <% page.posts.each(function(post){ %>
+    <% post.comments = false %>
     <%- partial('article', {post: post, index: true}) %>
   <% }) %>
   <% if (page.total > 1){ %>

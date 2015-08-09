@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        p {font-size: 16px;margin: 20px;}
+        #win {
+            color: red;}
+    </style>
+</head>
+<body>
+<p id="qunaraphone">qunaraphone</p>
+<p id="qunariphone">qunariphone</p>
+<p id="ua"></p>
+
+<form id="form" action="qunaraphone11111://" target="ifr">
+    <input id="btn" type="button" value="提交"/>
+</form>
+<iframe src="" frameborder="0" name="ifr" id="ifr"></iframe>
+<script type="text/javascript">
+    aphone = document.getElementById('qunaraphone');
+    iphone = document.getElementById('qunariphone');
+    ua = document.getElementById('ua');
+    ifr = document.getElementById('ifr');
+    form = document.getElementById('form');
+    btn = document.getElementById('btn');
+    ua.innerHTML = navigator.userAgent;
+
+    btn.onclick = function () {
+        setTimeout(function () {
+            alert(ifr.contentWindow.document);
+        }, 1000);
+        form.submit();
+    }
+
+    aphone.onclick = function () {
+        location.href = 'qunaraphone://';
+    }
+
+    iphone.onclick = function () {
+        location.href = 'qunariphone://';
+    }
+</script>
+</body>
+</html>
