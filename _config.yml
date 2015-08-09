@@ -70,6 +70,9 @@ theme: landscape
 deploy:
 - type: git
   repo: git@gitcafe.com:hanan/hanan.git
+- type: git
+  repo: git@github.com:hanan198501/hanan198501.github.io.git
+  branch: master
 
 # Other
 rss: atom.xml
