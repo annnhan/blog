@@ -68,9 +68,8 @@ theme: landscape
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: https://github.com/hanan198501/hanan198501.github.io.git
-  branch: master
+- type: git
+  repo: git@gitcafe.com:hanan/hanan.git
 
 # Other
 rss: atom.xml
