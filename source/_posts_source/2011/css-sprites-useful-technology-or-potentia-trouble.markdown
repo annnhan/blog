@@ -6,7 +6,7 @@ slug: css-sprites-useful-technology-or-potentia-trouble
 title: 'CSS Sprites: 有用的技术, 还是潜在的麻烦?'
 wordpress_id: 134
 categories:
-- HTML5/CSS3
+- CSS
 ---
 
 啊，无处不在的CSS Sprites——为数不多的网页设计技术，几乎瞬间，被评为最佳实践的CSS类之一。

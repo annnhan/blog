@@ -6,7 +6,7 @@ slug: git-use
 title: git 使用笔记
 wordpress_id: 979
 categories:
-- 工具/资源
+- 工具
 ---
 
 公司的项目从svn迁移到git了， 只是一份简易的使用指南和笔记，不是很高深。

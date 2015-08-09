@@ -6,7 +6,7 @@ slug: webstorm8
 title: WebStorm 8 新功能一览
 wordpress_id: 1139
 categories:
-- 工具/资源
+- 工具
 tags:
 - WebStorm
 ---

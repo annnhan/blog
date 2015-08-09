@@ -6,7 +6,7 @@ slug: windows-iis-wordpress-permalink
 title: Windows/IIS主机上如何让wordpress使用漂亮的固定链接
 wordpress_id: 242
 categories:
-- 发现与分享
+- 发现
 tags:
 - IIS
 - Rewrite

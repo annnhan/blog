@@ -3,7 +3,7 @@ author: 阿安
 comments: true
 layout: post
 slug: caniuse
-categories: [工具/资源]
+categories: [工具]
 tags : [caniuse]
 date: 2015-07-28 22:26:00+00:00
 ---

@@ -1,0 +1,8 @@
+<%- partial('_partial/archive', {
+    pagination: 4,
+    index: true,
+    title: page.title,
+    path: url_for(config.category_dir),
+    list: site.categories,
+    column: 8
+}) %>

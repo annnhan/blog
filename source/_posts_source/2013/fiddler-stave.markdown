@@ -6,7 +6,7 @@ slug: fiddler-stave
 title: Stave——让Fiddler拥有路径映射功能。
 wordpress_id: 1018
 categories:
-- 工具/资源
+- 工具
 tags:
 - fiddler
 - stave

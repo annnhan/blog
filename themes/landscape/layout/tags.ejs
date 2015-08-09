@@ -1,0 +1,8 @@
+<%- partial('_partial/archive', {
+    pagination: 4,
+    index: true,
+    title: page.title,
+    path: url_for(config.tag_dir),
+    list: site.tags,
+    column: 7
+}) %>

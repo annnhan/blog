@@ -6,7 +6,7 @@ slug: ie10-for-windows7
 title: windows7可以用上IE10了。
 wordpress_id: 630
 categories:
-- 发现与分享
+- 发现
 tags:
 - IE10
 - windows7

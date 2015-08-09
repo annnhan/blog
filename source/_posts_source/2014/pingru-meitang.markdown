@@ -6,7 +6,7 @@ slug: pingru-meitang
 title: 一位92岁老人一生中最美好、最痛苦、最意外的事情……
 wordpress_id: 1081
 categories:
-- 发现与分享
+- 发现
 post_format:
 - 视频
 ---

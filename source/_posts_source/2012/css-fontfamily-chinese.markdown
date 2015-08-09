@@ -6,7 +6,7 @@ slug: css-fontfamily-chinese
 title: 避免css中文字体在浏览器中解析成乱码
 wordpress_id: 671
 categories:
-- HTML5/CSS3
+- CSS
 tags:
 - chinese
 - css

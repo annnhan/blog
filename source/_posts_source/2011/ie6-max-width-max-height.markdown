@@ -6,7 +6,7 @@ slug: ie6-max-width-max-height
 title: 让IE6支持max-width, max-height属性
 wordpress_id: 94
 categories:
-- HTML5/CSS3
+- CSS
 ---
 
 max-width, min-width, max-height 和 min-heigh是CSS2的属性，它工作于IE7以及更高版本和或者Mozilla Firefox、Chrome等支持CSS2的浏览器，但不能与IE 6和更低版本IE浏览器兼容。

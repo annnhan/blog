@@ -6,7 +6,7 @@ slug: rhinoceros-book
 title: 第六版犀牛书：《javascript权威指南》
 wordpress_id: 412
 categories:
-- 发现与分享
+- 发现
 tags:
 - javascript权威指南
 - 犀牛书

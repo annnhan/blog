@@ -6,7 +6,7 @@ slug: javascript-classname-firefox-class-css
 title: javascript修改className在firefox中无法加载新class的样式问题
 wordpress_id: 59
 categories:
-- HTML5/CSS3
+- CSS
 tags:
 - className
 - javascript

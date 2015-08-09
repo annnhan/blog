@@ -6,7 +6,7 @@ slug: chrome-activex
 title: 推荐一款让Chrome支持网银的扩展，让你彻底告别IE
 wordpress_id: 373
 categories:
-- 工具/资源
+- 工具
 tags:
 - ActiveX
 - chrome

@@ -6,7 +6,7 @@ slug: days-with-my-father
 title: Days with my father.
 wordpress_id: 761
 categories:
-- 发现与分享
+- 发现
 ---
 
 半夜里，在拜读阮一峰老师的网志的时候，看到一个美国摄影师的作品。母亲去世后，他就拍他的父亲，还写下自己的感想。

@@ -6,7 +6,7 @@ slug: chrome-developer-tool
 title: Chrome开发人员工具使用技巧
 wordpress_id: 471
 categories:
-- 工具/资源
+- 工具
 tags:
 - chrome
 - 开发人员工具

@@ -1,0 +1,21 @@
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <%- partial('post/gallery') %>
+    <% if (post.link || post.title){ %>
+      <header class="article-header">
+        <%- partial('post/title', {class_name: 'article-title'}) %>
+      </header>
+    <% } %>
+    <div class="article-entry" itemprop="articleBody">
+      <%- post.content %>
+    </div>
+  </div>
+</article>
+
+<% if (post.comments){ %>
+<section id="comments">
+  <div id="disqus_thread">
+    <%- partial('comments') %>
+  </div>
+</section>
+<% } %>

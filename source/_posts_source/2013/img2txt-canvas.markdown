@@ -6,7 +6,7 @@ slug: img2txt-canvas
 title: 基于canvas将图片转化成字符画
 wordpress_id: 813
 categories:
-- HTML5/CSS3
+- CSS
 tags:
 - canvas
 - html5

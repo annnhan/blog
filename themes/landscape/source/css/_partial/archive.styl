@@ -1,9 +1,6 @@
 .archives-wrap
   margin: block-margin 0
 
-.archives
-  clearfix()
-
 .archive-year-wrap
   margin-bottom: 1em
 
@@ -11,11 +8,57 @@
   @extend $block-caption
 
 .archives
+  clearfix()
   column-gap: 10px
   @media mq-tablet
     column-count: 2
   @media mq-normal
     column-count: 3
+
+.archives-9
+  clearfix()
+  column-gap: 10px
+  @media mq-mobile
+    column-count: 3
+  @media mq-tablet
+    column-count: 6
+  @media mq-normal
+    column-count: 9
+
+.archives-8
+  clearfix()
+  column-gap: 10px
+  @media mq-mobile
+    column-count: 2
+  @media mq-tablet
+    column-count: 5
+  @media mq-normal
+    column-count: 8
+
+.archives-7
+  clearfix()
+  column-gap: 10px
+  @media mq-mobile
+    column-count: 1
+  @media mq-tablet
+    column-count: 4
+  @media mq-normal
+    column-count: 7
+
+.archives-6
+  clearfix()
+  column-gap: 10px
+  @media mq-mobile
+    column-count: 1
+  @media mq-tablet
+    column-count: 3
+  @media mq-normal
+    column-count: 6
+
+a.full-block
+  display: block
+  width: 100%
+  height: 100%
 
 .archive-article
   avoid-column-break()

@@ -6,7 +6,7 @@ slug: video2txt-canvas
 title: 基于canvas将视频转化成字符动画
 wordpress_id: 851
 categories:
-- HTML5/CSS3
+- CSS
 tags:
 - canvas
 - video

@@ -1,7 +1,10 @@
 # Header
 menu:
-  安·记: /
-  Archives: archives
+  归档: archives
+  分类: categories
+  标签: tags
+  链接: links
+  关于: about
 rss: atom.xml
 
 # Content
@@ -18,8 +21,8 @@ widgets:
 - recent_posts
 
 # Miscellaneous
-google_analytics:
-favicon: /favicon.png
+analytics: true
+favicon: favicon.png
 twitter:
 google_plus:
 fb_admins:

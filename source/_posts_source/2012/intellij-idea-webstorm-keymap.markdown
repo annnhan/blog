@@ -6,7 +6,7 @@ slug: intellij-idea-webstorm-keymap
 title: Intellij IDEA,WebStorm-keymap
 wordpress_id: 640
 categories:
-- 工具/资源
+- 工具
 tags:
 - Intellij
 - keymap

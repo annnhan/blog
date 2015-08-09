@@ -6,7 +6,7 @@ slug: html5-w3c-whatwg
 title: HTML5? 你妈贵姓？W3C？还是WHATWG？
 wordpress_id: 478
 categories:
-- HTML5/CSS3
+- CSS
 tags:
 - html5
 - W3C

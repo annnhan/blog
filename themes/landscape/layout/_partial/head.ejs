@@ -26,9 +26,9 @@
     <link rel="alternative" href="<%- url_for(theme.rss) %>" title="<%= config.title %>" type="application/rss+xm">
   <% } %>
   <% if (theme.favicon){ %>
-    <link rel="icon" href="<%- theme.favicon %>">
+    <link rel="icon" href="<%- url_for(theme.favicon) %>">
   <% } %>
   <link href="<%- url_for('css/fonts/source-code-pro.woff2') %>" rel="stylesheet" type="text/css">
   <%- css('css/style') %>
-  <%- partial('google-analytics') %>
+  <%- partial('analytics') %>
 </head>

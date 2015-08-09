@@ -6,7 +6,7 @@ slug: css3-new-knowledge-student
 title: CSS3新属性基础学习
 wordpress_id: 118
 categories:
-- HTML5/CSS3
+- CSS
 ---
 
 嗯，这里是是CSS3一些新的属性基本知识：文字阴影，盒阴影，边界半径。这些CSS3属性常用来加强布局和实现良好的效果：

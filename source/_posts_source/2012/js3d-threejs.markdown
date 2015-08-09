@@ -6,7 +6,7 @@ slug: js3d-threejs
 title: js 3d！ 给three.js跪了~
 wordpress_id: 643
 categories:
-- 发现与分享
+- 发现
 tags:
 - canvas
 - JS3D

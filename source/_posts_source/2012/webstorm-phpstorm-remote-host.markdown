@@ -6,7 +6,7 @@ slug: webstorm-phpstorm-remote-host
 title: 使用WebStorm/Phpstorm实现remote host远程开发
 wordpress_id: 650
 categories:
-- 工具/资源
+- 工具
 tags:
 - host
 - phpstorm

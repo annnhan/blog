@@ -13,16 +13,16 @@ timezone:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://annnn.me
-root: /blog
+root: /
 permalink: :title/
 permalink_defaults:
 
 # Directory
 source_dir: source
 public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
+tag_dir: tag
+archive_dir: archive
+category_dir: categorie
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -72,3 +72,5 @@ deploy:
   repo: https://github.com/hanan198501/blog.git
 
 rss: atom.xml
+
+

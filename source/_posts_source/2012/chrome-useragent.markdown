@@ -6,7 +6,7 @@ slug: chrome-useragent
 title: 发现一个小咪咪，chrome自带了修改user Agent的功能了。
 wordpress_id: 667
 categories:
-- 发现与分享
+- 发现
 tags:
 - chrome
 - useragent

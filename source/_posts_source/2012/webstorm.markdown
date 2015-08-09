@@ -6,7 +6,7 @@ slug: webstorm
 title: WebStorm：令人眼前一亮的一款前端开发IDE
 wordpress_id: 294
 categories:
-- 工具/资源
+- 工具
 tags:
 - IDE
 - WebStorm

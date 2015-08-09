@@ -6,7 +6,7 @@ slug: ie6-iframe-crash
 title: 嵌入iframe的页面在IE6下滚动时候出现花屏
 wordpress_id: 422
 categories:
-- HTML5/CSS3
+- CSS
 tags:
 - IE6
 - iframe

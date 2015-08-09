@@ -6,7 +6,7 @@ slug: html5-form-element
 title: HTML5中一些新的“form”元素属性
 wordpress_id: 51
 categories:
-- HTML5/CSS3
+- CSS
 tags:
 - form
 - html5

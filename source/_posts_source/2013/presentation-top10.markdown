@@ -6,7 +6,7 @@ slug: presentation-top10
 title: 世界十大经典presentation
 wordpress_id: 690
 categories:
-- 发现与分享
+- 发现
 tags:
 - presentation
 ---

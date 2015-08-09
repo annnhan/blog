@@ -6,7 +6,7 @@ slug: retina-css4
 title: Retina屏幕与CSS4
 wordpress_id: 699
 categories:
-- HTML5/CSS3
+- CSS
 ---
 
 随着越来越多Retina技术的普及，越来越多的设备开始配置了Retina屏幕。w3c也在css4草案中加入了适配Retina屏幕的属性image-set，目前支持此属性的浏览器有chrome和safari。记得在今年冬天的webrebiuld交流会上，QQ的前端大湿曾经介绍过，并且在QQ.com的logo中用到了此属性。

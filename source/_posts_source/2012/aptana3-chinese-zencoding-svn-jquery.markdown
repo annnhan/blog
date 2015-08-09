@@ -6,7 +6,7 @@ slug: aptana3-chinese-zencoding-svn-jquery
 title: Aptana Studio 3常用配置：汉化，zen-coding，SVN，jquery提示。
 wordpress_id: 577
 categories:
-- 工具/资源
+- 工具
 tags:
 - aptana
 - JQuery

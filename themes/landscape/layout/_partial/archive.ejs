@@ -1,4 +1,6 @@
 <% if (pagination == 2){ %>
+
+  <!--首页-->
   <% page.posts.each(function(post){ %>
     <%- partial('article', {post: post, index: true}) %>
   <% }) %>
@@ -10,7 +12,59 @@
       }) %>
     </nav>
   <% } %>
+
+<% }else if (pagination == 3) { %>
+
+  <!--所有文章归档-->
+  <% site.yearPosts.forEach(function(yearData){ %>
+    <% var year = yearData.year %>
+    <%if (year != 2000){%>
+    <section class="archives-wrap">
+      <div class="archive-year-wrap">
+        <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= year %></a>
+      </div>
+      <div class="archives">
+        <% yearData.posts.forEach(function(post, i){ %>
+        <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+        <% }) %>
+      </div>
+    </section>
+    <% } %>
+  <% }) %>
+
+<% }else if (pagination == 4) { %>
+
+  <!--自定义列表信息-->
+  <section class="archives-wrap">
+    <div class="archive-year-wrap">
+      <span class="archive-year"><%= title %></span>
+    </div>
+    <div class="archives-<%= column %>">
+      <%
+        if(!list.each){
+          list.each = list.forEach;
+        }
+      %>
+      <% list.each(function(item){ %>
+      <article class="archive-article archive-type-post">
+        <div class="archive-article-inner">
+          <header class="archive-article-header">
+            <h2 itemprop="name">
+              <% if (item.href) { %>
+              <a class="archive-article-title full-block" href="<%= item.href %>" target="_blank"><%= item.name %></a>
+              <% } else { %>
+              <a class="archive-article-title full-block" href="<%- path + '/' + item.name %>"><%= item.name %></a>
+              <% } %>
+            </h2>
+          </header>
+        </div>
+      </article>
+      <% }) %>
+    </div>
+  </section>
+
 <% } else { %>
+
   <% var last; %>
   <% page.posts.each(function(post, i){ %>
     <% var year = post.date.year(); %>
@@ -30,4 +84,13 @@
   <% if (page.posts.length){ %>
     </div></section>
   <% } %>
+  <% if (page.total > 1){ %>
+  <nav id="page-nav">
+    <%- paginator({
+      prev_text: '&laquo; Prev',
+      next_text: 'Next &raquo;'
+    }) %>
+  </nav>
+  <% } %>
+
 <% } %>

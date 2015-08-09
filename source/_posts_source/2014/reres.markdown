@@ -6,7 +6,7 @@ slug: reres
 title: 通过ReRes让chrome拥有路径映射的autoResponse功能。
 wordpress_id: 1039
 categories:
-- 工具/资源
+- 工具
 tags:
 - request
 - ReRes

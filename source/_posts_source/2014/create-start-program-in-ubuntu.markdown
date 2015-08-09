@@ -3,7 +3,7 @@ author: 阿安
 comments: true
 layout: post
 slug: create-start-program-in-ubuntu
-categories: [工具/资源]
+categories: [工具]
 tags: [pycharm, ubuntu]
 wordpress_id: 1100
 date: 2014-02-24 07:54:53+00:00

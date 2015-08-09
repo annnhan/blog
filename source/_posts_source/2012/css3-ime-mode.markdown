@@ -6,7 +6,7 @@ slug: css3-ime-mode
 title: 通过ime-mode属性控制文本字段的输入法编辑器的状态
 wordpress_id: 677
 categories:
-- HTML5/CSS3
+- CSS
 tags:
 - css3
 - ime-mode

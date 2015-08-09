@@ -6,7 +6,7 @@ slug: through-the-ie-private-filter-let-ie6-ie7-ie8-support-transparent-backgrou
 title: 通过IE私有滤镜让IE6 7 8支持背景透明，内容不透明效果。
 wordpress_id: 149
 categories:
-- HTML5/CSS3
+- CSS
 ---
 
 CSS3已经支持背景rgba的rgba透明度，这一方法可以避免元素内容也随背景一起变透明(详情请阅/css3-new-knowledge-student)。但是这一属性在低于IE9的版本中却不被支持，我们可以通过IE私有滤镜来实现背景透明效果。

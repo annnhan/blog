@@ -6,7 +6,7 @@ slug: tuozhuai-zhaopian-demo
 title: 可拖拽排列的照片墙效果，或是拼图效果？同页面多实例展示
 wordpress_id: 88
 categories:
-- HTML5/CSS3
+- CSS
 ---
 
 在蓝色理想上看到这个效果，支持手动拖拽，喜欢的童鞋可以手下，有点小小的遗憾就是没有打开图像，动态调用，都要改，不过稍稍做下优化和调整不是很繁琐。<!-- more -->

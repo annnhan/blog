@@ -6,7 +6,7 @@ slug: review-css-3d
 title: 重温CSS 3D
 wordpress_id: 1110
 categories:
-- HTML5/CSS3
+- CSS
 tags:
 - css3
 ---

@@ -6,7 +6,7 @@ slug: mustache-array-index
 title: Mustache.js模板引擎无法获得数组内元素索引的解决办法
 wordpress_id: 970
 categories:
-- HTML5/CSS3
+- CSS
 ---
 
 公司某项目前端模板用的是Mustache.js！！！ 然后偶遇到个需求是需要渲染数组的时候输出其元素的索引值，比如以下数据：

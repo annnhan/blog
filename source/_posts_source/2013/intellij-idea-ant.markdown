@@ -6,7 +6,7 @@ slug: intellij-idea-ant
 title: 在Intellij IDEA中使用Ant
 wordpress_id: 773
 categories:
-- 工具/资源
+- 工具
 tags:
 - Ant
 - build.xml

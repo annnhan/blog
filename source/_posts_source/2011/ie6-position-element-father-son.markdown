@@ -6,7 +6,7 @@ slug: ie6-position-element-father-son
 title: IE6下position定位子元素溢出，父元素被撑开的解决思路。
 wordpress_id: 104
 categories:
-- HTML5/CSS3
+- CSS
 ---
 
 在一些被常规的页面布局当中，我们常常需要通过position定位HTML元素来实现我们想要的效果。但是在这个办法在IE6中常常会出现各种问题。例如，我们想让一个子元素溢出其父元素之外显示，而影响父元素本身和其他兄弟元素的样式，我们可以这样写：<!-- more -->

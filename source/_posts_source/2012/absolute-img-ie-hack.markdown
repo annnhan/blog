@@ -6,7 +6,7 @@ slug: absolute-img-ie-hack
 title: IE坑：position:absolute的元素无法处于img元素上方
 wordpress_id: 646
 categories:
-- HTML5/CSS3
+- CSS
 tags:
 - absolute
 - hack

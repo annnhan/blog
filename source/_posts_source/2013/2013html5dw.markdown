@@ -6,7 +6,7 @@ slug: 2013html5dw
 title: HTML5守望者/暨开发者日——第二季攻城师嘉年华，共享·共赢·共行动
 wordpress_id: 931
 categories:
-- 发现与分享
+- 发现
 ---
 
 ![enter image description here](http://2013.html5dw.com/assets/images/conference.jpg)

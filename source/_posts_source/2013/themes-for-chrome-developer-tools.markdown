@@ -6,7 +6,7 @@ slug: themes-for-chrome-developer-tools
 title: 为你的chrome开发者工具换个主题风格吧
 wordpress_id: 954
 categories:
-- 工具/资源
+- 工具
 ---
 
 ![chrome-tool-theme](/wp-content/uploads/2013/06/chrome-tool-theme.jpg)

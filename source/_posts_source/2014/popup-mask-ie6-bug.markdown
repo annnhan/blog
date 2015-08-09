@@ -6,7 +6,7 @@ slug: popup-mask-ie6-bug
 title: popup组件中mask层的IE6 bug和兼容办法
 wordpress_id: 1125
 categories:
-- HTML5/CSS3
+- CSS
 tags:
 - css
 - iframe

@@ -6,7 +6,7 @@ slug: webstorm-function-operating-guide
 title: WebStorm功能特点以及使用指南
 wordpress_id: 361
 categories:
-- 工具/资源
+- 工具
 tags:
 - WebStorm
 - Webstorm使用指南

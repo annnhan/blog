@@ -6,7 +6,7 @@ slug: vim
 title: vim备忘
 wordpress_id: 795
 categories:
-- 工具/资源
+- 工具
 tags:
 - vim
 ---
