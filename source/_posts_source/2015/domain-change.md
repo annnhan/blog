@@ -1,4 +1,4 @@
-title: 启用新域名: annn.me
+title: 启用新域名
 author: 阿安
 comments: true
 layout: post
