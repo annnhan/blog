@@ -7,3 +7,4 @@ public/
 .deploy*/
 .idea/
 .local_object/
+source/_post/*
