@@ -33,6 +33,10 @@ function move(dir) {
 }
 
 module.exports = function () {
+    if (!fs.existsSync(postPath)) {
+        fs.mkdirSync(postPath);
+    }
+
     console.log('INFO  Clearing _posts folder...');
     child.execSync('rm -r *', {cwd: postPath});
 
