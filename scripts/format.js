@@ -1,6 +1,8 @@
 /**
  * Created by an.han on 15/8/8.
  */
+var fs = require('fs');
+var path = require('path');
 
 console.log('INFO Format data start');
 
@@ -28,9 +30,17 @@ hexo.on('generateBefore', function () {
             posts: yearMap[year]
         });
     }
-    hexo.locals.set('yearPosts', yearPosts.sort(function (a, b) {
+
+    var yearPosts = yearPosts.sort(function (a, b) {
         return b.year - a.year;
-    }));
+    });
+
+
+    //var json = JSON.stringify(yearPosts, null, 4);
+    //var dir = path.resolve(__dirname, '../.local_object');
+    //fs.writeFileSync(path.resolve(dir, 'yearPosts.json'), json);
+
+    hexo.locals.set('yearPosts', yearPosts);
 });
 
 console.log('INFO Format data end');
