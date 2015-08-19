@@ -21,10 +21,10 @@ hexo.on('generateBefore', function () {
         }
     });
 
-    for (var year in yearMap) {
+    for (var key in yearMap) {
         yearPosts.push({
-            year: year,
-            posts: yearMap[year]
+            year: key,
+            posts: yearMap[key]
         });
     }
 
@@ -32,7 +32,7 @@ hexo.on('generateBefore', function () {
         return b.year - a.year;
     });
 
-    //console.log(yearPosts);
+    console.log(yearPosts);
 
     hexo.locals.set('yearPosts', yearPosts);
 });

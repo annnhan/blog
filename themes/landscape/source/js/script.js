@@ -59,8 +59,9 @@
                 '<div class="article-share-links">',
                 '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
                 '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-weibo" target="_blank" title="Google+"></a>',
-                '<a href="http://service.weibo.com/share/share.php??url=' + encodedUrl + 'appkey=215550519' + 'title=' + encodedTitle + '" class="article-share-weibo" target="_blank" title="微博"></a>',
+                '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                '<a href="http://connect.qq.com/widget/shareqq/index.html??url=' + url + '&title=' + title + '&desc=' + title + '" class="article-share-qq" target="_blank" title="QQ"></a>',
+                '<a href="http://service.weibo.com/share/share.php?url=' + url + '&appkey=215550519' + '&title=' + title + '" class="article-share-weibo" target="_blank" title="微博"></a>',
                 '</div>',
                 '</div>'
             ].join('');
@@ -74,7 +75,7 @@
 
         box.css({
             top: offset.top + 25,
-            left: offset.left
+            left: offset.left - 34
         }).addClass('on');
     }).on('click', '.article-share-box', function (e) {
         e.stopPropagation();
