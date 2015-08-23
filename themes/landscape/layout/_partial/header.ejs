@@ -20,6 +20,11 @@
         <% } %>
       </nav>
       <nav id="sub-nav">
+        <% if (config.notice){ %>
+        <span style="color: #fff; float: left; margin-top: 12px; color: #ccc;">
+          <%=config.notice%>
+        </span>
+        <% } %>
         <% if (theme.rss){ %>
           <a id="nav-rss-link" class="nav-icon" href="<%- url_for(theme.rss) %>" title="RSS Feed"></a>
         <% } %>
