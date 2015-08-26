@@ -8,6 +8,7 @@ gulp.task('move',       require('./task/move'));
 gulp.task('clean',   require('./task/clean'));
 gulp.task('generate',   require('./task/generate'));
 gulp.task('deploy',     require('./task/deploy'));
+gulp.task('url',     require('./task/url'));
 
 gulp.task('default', ['move', 'generate']);
 gulp.task('all', ['move', 'generate', 'deploy']);
