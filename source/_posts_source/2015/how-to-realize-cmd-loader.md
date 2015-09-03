@@ -330,7 +330,7 @@ cmd 是阿里大神玉伯提出的基于浏览器的前端模块化规范，并�
 
 ## util.js
 
-这里只有一个 getModuleExports 方法， 接收一个模块，返回模块的接口。当模块的 exports 属性不存在时，说明模块的 factory 没有被执行过。这时我们需要执行下 factory，传入 require， 创建的exports，以及 module 本身作为参数。最后取的模块的暴露的数据并返
+这里只有一个 getModuleExports 方法， 接收一个模块，返回模块的接口。当模块的 exports 属性不存在时，说明模块的 factory 没有被执行过。这时我们需要执行下 factory，传入 require， 创建的exports，以及 module 本身作为参数。最后获取模块的暴露的数据并返回。
 
     module.exports = {
         getModuleExports: function (mod) {
