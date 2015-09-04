@@ -19,12 +19,12 @@ cmd 是阿里大神玉伯提出的基于浏览器的前端模块化规范，并�
 ![cmd loader](/assets/img/cmd.png)
 
 1. 首先，通过 use 方法来加载入口模块，并接收一个回调函数， 当模块加载完成， 会调用回调函数，并传入对应的模块。use 方法会 check 模块有没有缓存，如果有，则从缓存中获取模块，如果没有，则创建并加载模块。
-2. 获取到模块后，模块可能还没有 load 完成，所以需要在模块上绑定一个 "complate" 事件，模块加载完成会触发这个事件，这时候才调用回调函数。
+2. 获取到模块后，模块可能还没有 load 完成，所以需要在模块上绑定一个 "complete" 事件，模块加载完成会触发这个事件，这时候才调用回调函数。
 3. 创建一个模块时，id就是模块的地址，通过创建 script 标签的方式异步加载模块的代码（factory），factory 加载完成后，会 check factory 中有没有 require 别的子模块:
-    - 如果有，继续加载其子模块，并在子模块上绑定 "complate" 事件，来触发本身 的 "complate" 事件；
-    - 如果没有则直接触发本身的 "complate" 事件。
+    - 如果有，继续加载其子模块，并在子模块上绑定 "complete" 事件，来触发本身 的 "complete" 事件；
+    - 如果没有则直接触发本身的 "complete" 事件。
 4. 如果子模块中还有依赖，则会递归这个过程。
-5. 通过事件由里到外的传递，当所有依赖的模块都 complate 的时候，最外层的入口模块才会触发 "complate" 事件，use 方法中的回调函数才会被调用。
+5. 通过事件由里到外的传递，当所有依赖的模块都 complete 的时候，最外层的入口模块才会触发 "complete" 事件，use 方法中的回调函数才会被调用。
 
 <!-- more -->
 
@@ -133,7 +133,7 @@ cmd 是阿里大神玉伯提出的基于浏览器的前端模块化规范，并�
 
 ## load.js
 
-获取一个模块，并绑定事件，接收两个参数，一个是模块id，一个是回调函数，并返回一个 promise 对象。当模块 complate（加载完成）时，执行回调，同时 resolve 返回的 promise 对象。
+获取一个模块，并绑定事件，接收两个参数，一个是模块id，一个是回调函数，并返回一个 promise 对象。当模块 complete（加载完成）时，执行回调，同时 resolve 返回的 promise 对象。
 
     var Promise = require('./promise');
     var Module = require('./module');
@@ -142,7 +142,7 @@ cmd 是阿里大神玉伯提出的基于浏览器的前端模块化规范，并�
     module.exports = function (id, callback) {
         return new Promise(function (resolve, reject) {
             var mod =  mcmd.modules[id] || Module.create(id);
-            mod.on('complate', function () {
+            mod.on('complete', function () {
                 var exp = util.getModuleExports(mod);
                 if (typeof callback === 'function') {
                     callback(exp);
@@ -197,7 +197,7 @@ cmd 是阿里大神玉伯提出的基于浏览器的前端模块化规范，并�
         (this.callbacks[event] || (this.callbacks[event] = [])).push(callback);
         if (
             (this.status === mcmd.MODULE_STATUS.LOADING && event === 'load') ||
-            (this.status === mcmd.MODULE_STATUS.COMPLETED && event === 'complate')
+            (this.status === mcmd.MODULE_STATUS.COMPLETED && event === 'complete')
         ) {
             callback(this);
         }
@@ -222,7 +222,7 @@ cmd 是阿里大神玉伯提出的基于浏览器的前端模块化规范，并�
                     this.fire('load');
                     break;
                 case mcmd.MODULE_STATUS.COMPLETED:
-                    this.fire('complate');
+                    this.fire('complete');
                     break;
                 case mcmd.MODULE_STATUS.ERROR:
                     this.fire('error', info);
@@ -237,7 +237,7 @@ cmd 是阿里大神玉伯提出的基于浏览器的前端模块化规范，并�
 
 ## define.js
 
-实现 window.define 方法。接收一个参数 factory（cmd规范中不止一个，为了保持简单，我们只实现一个），即模块的代码包裹函数。通过 getCurrentScript 这个函数获取到当前执行脚本的 script 节点 src ，提取出模块 id ，找到模块对象。然后提取出 factory 中的依赖子模块，如果没有依赖，则直接触发模块的 "complate" 事件， 如果有依赖，则创建依赖的模块，绑定事件并加载，等依赖的模块加载完成后，再触发 "complate" 事件。
+实现 window.define 方法。接收一个参数 factory（cmd规范中不止一个，为了保持简单，我们只实现一个），即模块的代码包裹函数。通过 getCurrentScript 这个函数获取到当前执行脚本的 script 节点 src ，提取出模块 id ，找到模块对象。然后提取出 factory 中的依赖子模块，如果没有依赖，则直接触发模块的 "complete" 事件， 如果有依赖，则创建依赖的模块，绑定事件并加载，等依赖的模块加载完成后，再触发 "complete" 事件。
 
     var util = require('./util');
     var Promise = require('./promise');
@@ -253,7 +253,7 @@ cmd 是阿里大神玉伯提出的基于浏览器的前端模块化规范，并�
                 return new Promise(function (resolve, reject) {
                     id = mcmd.config.root + id;
                     var depMode = mcmd.modules[id] || Module.create(id);
-                    depMode.on('complate', resolve);
+                    depMode.on('complete', resolve);
                     depMode.on('error', reject);
                 });
             })).then(function () {
