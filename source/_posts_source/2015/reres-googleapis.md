@@ -16,9 +16,9 @@ date: 2015-09-11 13:22:51
 
 安装好 ReRes 后，添加一条规则：
 
-    If URL match：^http\:\/\/(.+?)\.googleapis\.com/(.+?)$
+    If URL match：^http\:\/\/(.+?)\.googleapis\.com\/(.+?)$
     Response：http://$1.useso.com/$2
     
-当浏览器中的请求匹配到 ^http\:\/\/(.+?)\.googleapis\.com/(.+?)$ 这个正则时，会自动跳转到 http://$1.useso.com/$2 这个 url ，其中 $1 和 $2 分别是正则中捕获到的两个分组。
+当浏览器中的请求匹配到 ^http\:\/\/(.+?)\.googleapis\.com\/(.+?)$ 这个正则时，会自动跳转到 http://$1.useso.com/$2 这个 url ，其中 $1 和 $2 分别是正则中捕获到的两个分组。
 
 如此，就可以正常访问使用了 googleapis 的网站。
