@@ -10,9 +10,9 @@ date: 2015-09-11 13:22:51
 
 许多国外的网站都使用被墙掉的 googleapis.com 上的静态资源（如 font、js库 等），如果不爬墙，这些资源无法加载，导致网站无法正常访问。
 
-其实，360提供了一个国内的 googleapis.com 镜像仓库（[ajax.useso.com](http://useso.com)）。我想，当遇到 googleapis 的请求时，浏览器能自动跳转到360的镜像，就能正常访问了。
+其实，360提供了一个国内的 googleapis.com 镜像仓库（[libs.useso.com](http://libs.useso.com/)）。我想，当遇到 googleapis 的请求时，浏览器能自动跳转到360的镜像，就能正常访问了。
 
-正好，我以前写过一个 chrome 插件 ReRes ([https://github.com/hanan198501/ReRes](https://github.com/hanan198501/ReRes))，可以通过它来完成这项工作。
+正好，我以前写过一个 chrome 插件 [ReRes](https://github.com/hanan198501/ReRes)，可以通过它来完成这项工作。
 
 安装好 ReRes 后，添加一条规则：
 
