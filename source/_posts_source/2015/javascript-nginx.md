@@ -49,7 +49,7 @@ date: 2015-10-01 15:33:41
     
 ### 执行 javascript 代码片段
     
-使用 js_run 指令可以执行指定的 javaxript 代码：
+使用 js_run 指令可以执行指定的 javacript 代码：
     
     location /hello {
         js_run "
