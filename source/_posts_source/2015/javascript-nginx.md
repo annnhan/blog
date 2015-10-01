@@ -26,6 +26,8 @@ date: 2015-10-01 15:33:41
     $ make
     $ make install
     
+<!-- more -->    
+    
 ## 在 nignx.conf 中使用 nginscript   
 
 ### 定义变量
@@ -106,7 +108,7 @@ date: 2015-10-01 15:33:41
         res.finish();
     ";
     
-### nginscript 鱼 javascript 的区别
+### nginscript 与 javascript 的区别
     
 nginscript 不是完整的 javacript，它只是是实现了一个 ECMAScript 的一个子集， 为了追求效率， 许多 javascript 的内置对象在 nginscript 中并没有实现。我尝试使用了一下 Date、JSON 等对象，都还没有实现。
 
