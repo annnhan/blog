@@ -110,9 +110,9 @@ date: 2015-10-01 15:33:41
     
 ### nginscript 与 javascript 的区别
     
-nginscript 不是完整的 javacript，它只是是实现了一个 ECMAScript 的一个子集， 为了追求效率， 许多 javascript 的内置对象在 nginscript 中并没有实现。我尝试使用了一下 Date、JSON 等对象，都还没有实现。
+nginscript 不是完整的 javascript，它只是是实现了一个 ECMAScript 的一个子集， 为了追求效率， 许多 javascript 的内置对象在 nginscript 中并没有实现。我尝试使用了一下 Date、JSON 等对象，都还没有实现。
 
-这便是几乎所有的 nginscript 知识，是不是很简单，虽然没有实现完整的 EMCAScript 规范，但是对于配置 nginx 来说，个人感觉也够用了。
+这便是几乎所有的 nginscript 知识，虽然没有实现完整的 EMCAScript 规范，但是对于配置 nginx 来说，个人感觉也够用了。
 
 
     
