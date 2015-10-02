@@ -25,10 +25,10 @@ date: 2015-10-01 15:33:41
     $ ./configure --add-module=刚才解压的nginscript目录
     $ make
     $ make install
-    
-<!-- more -->    
-    
-## 在 nignx.conf 中使用 nginscript   
+
+<!-- more -->
+
+## 在 nignx.conf 中使用 nginscript
 
 ### 定义变量
 
