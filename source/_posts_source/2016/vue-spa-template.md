@@ -11,7 +11,7 @@ date: 2016-10-29 22:23:09
 
 ## 项目简介
 
-Github: <a href="https://github.com/hanan198501/vue-spa-template" target="_blank">https://github.com/hanan198501/vue-spa-template</a>
+Github: <a href="https://github.com/annnhan/vue-spa-template" target="_blank">https://github.com/annnhan/vue-spa-template</a>
 
 最近在给团队做前端技术改造，移动端方面主要使用 vue2.0 重构，这是基于 vue-cli 脚手架生成项目模板。我们做了一些改造，
 加入了 vue-router ，vuex 等配套设施，本地 dev server 中加入了接口 mock 功能，还增加一个 build server 来预览 build 结果页面，前后端通过 spa 的方式实现分离，并相应做了分离后的联调，部署方案。
