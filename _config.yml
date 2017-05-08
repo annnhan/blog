@@ -71,7 +71,7 @@ theme: landscape
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
 - type: git
-  repo: https://github.com/hanan198501/hanan198501.github.io.git
+  repo: https://github.com/annnhan/annnhan.github.io.git
 
 # Other
 rss: atom.xml
