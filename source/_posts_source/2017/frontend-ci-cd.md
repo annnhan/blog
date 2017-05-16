@@ -48,7 +48,7 @@ date: 2017-05-03
 
 ### 配置项目的 jenkins job
 
-首先，在 jenkins 中需要安装 [Gitlab Hook Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Gitlab+Hook+Plugin) 这个插件，一支持 gitlab 的 webhook 功能。
+首先，在 jenkins 中需要安装 [Gitlab Hook Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Gitlab+Hook+Plugin) 这个插件，以支持 gitlab 的 webhook 功能。
 
 1. 在 jenkins 左边栏点击 "新建"， 输入 job 名称，选择 "构建一个自由风格的软件项目" 一项。点击 "OK"
 ![](/assets/img/ci-cd-creact-job.png)
