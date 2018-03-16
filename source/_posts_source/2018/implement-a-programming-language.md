@@ -2,7 +2,7 @@ title: 如何使用 JavaScript 实现一门编程语言
 author: 阿安
 comments: true
 layout: post
-slug:  implement-a-programming-language
+slug: implement-a-programming-language
 categories: [javascript]
 tags : [parse, programming, language, javascript, AST, compile]
 date: 2018-03-16
