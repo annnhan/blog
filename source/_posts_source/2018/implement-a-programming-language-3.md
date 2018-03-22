@@ -21,6 +21,8 @@ date: 2018-03-22
 
 因为流对象主要用来处理字符，所以 next()/ peek() 方法返回的值也是字符（JS没有char类型，它们是包含一个单一字符的字符串）。
 
+<!-- more -->
+
 这里是这个对象的完整代码，我将称之为“InputStream”。它足够简单，理解起来很容易：
 
     function InputStream(input) {

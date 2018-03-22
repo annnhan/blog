@@ -33,6 +33,8 @@ tokenizer(标记器, 也称为“词法分析器”), 对 [字符输入流](/imp
 
 “read_next”函数作为tokenizer的核心部分 ，它实现了上面的内容：
 
+<!-- more -->
+
     function read_next() {
         read_while(is_whitespace);
         if (input.eof()) return null;
