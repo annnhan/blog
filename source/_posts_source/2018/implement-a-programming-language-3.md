@@ -51,7 +51,7 @@ date: 2018-03-22 10:00:00
 
 请注意，它不是标准的通过类创建的对象（通过 new 关键字调用）。您只需要通过 `var stream = InputStream(string)` 即可得到流对象。
 
-接下来，我们将在这个对象之上编写另一个抽象： [tokenizer](/implement-a-programming-language-3) 。
+接下来，我们将在这个对象之上编写另一个抽象： [tokenizer](/implement-a-programming-language-4) 。
 
 _相关文章_
 
