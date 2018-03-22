@@ -5,7 +5,7 @@ layout: post
 slug: implement-a-programming-language-3
 categories: [javascript]
 tags : [parse, programming, language, javascript, AST, compile, 编译原理]
-date: 2018-03-24
+date: 2018-03-22 10:00:01
 ---
 
 tokenizer(标记器, 也称为“词法分析器”), 对 [字符输入流](/implement-a-programming-language-3) 进行操作，并返回具有相同接口的流对象，但由 peek()/next() 返回的值一个个token。token是具有两个属性的对象：type和value。以下是我们所支持的token的一些示例：

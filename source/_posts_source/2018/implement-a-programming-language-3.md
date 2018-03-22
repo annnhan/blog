@@ -5,7 +5,7 @@ layout: post
 slug: implement-a-programming-language-3
 categories: [javascript]
 tags : [parse, programming, language, javascript, AST, compile, 编译原理]
-date: 2018-03-22
+date: 2018-03-22 10:00:00
 ---
 
 这是最简单的部分。我们将创建一个“流对象”，它提供了从字符串中读取字符的操作。其中4个方法：

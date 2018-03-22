@@ -5,7 +5,7 @@ layout: post
 slug: implement-a-programming-language-5
 categories: [javascript]
 tags : [parse, programming, language, javascript, AST, compile, 编译原理]
-date: 2018-03-24
+date: 2018-03-22 10:00:02
 ---
 
 在计算机科学中，抽象语法树（Abstract Syntax Tree，AST），或简称语法树（Syntax tree），是源代码语法结构的一种抽象表示。它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。
