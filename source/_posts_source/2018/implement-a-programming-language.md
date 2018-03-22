@@ -1,14 +1,14 @@
-title: 如何使用 JavaScript 实现一门编程语言
+title: 如何使用 JavaScript 实现一门编程语言(1) —— 前言
 author: 阿安
 comments: true
 layout: post
 slug: implement-a-programming-language
 categories: [javascript]
-tags : [parse, programming, language, javascript, AST, compile]
+tags : [parse, programming, language, javascript, AST, compile, 编译原理]
 date: 2018-03-16
 ---
 
-这是一系列关于如何实现编程语言的教程。如果你曾经写过一个解释器或编译器，那么这里可能没有什么新东西。但是，如果您使用正则表达式来“解析” 任何看起来像编程语言的东西，那么请至少阅读解析部分。让我们写出更少的错误代码！
+这是一系列关于 [如何实现编程语言](/tag/编译原理) 的教程。如果你曾经写过一个解释器或编译器，那么这里可能没有什么新东西。但是，如果您使用正则表达式来“解析” 任何看起来像编程语言的东西，那么请至少阅读解析部分。让我们写出更少的错误代码！
 
 目标受众是普通的 JavaScript / NodeJS 程序员。
 
@@ -93,7 +93,15 @@ _请注意，标识符名称可以包含负号字符（print-range）。这是�
 
 好了，这是就我们的小 λ 语言。它不一定是很完善的的。它的语法看起来很可爱，但也有陷阱。它有很多缺失的功能，如对象或数组; 我们并不关注这些缺失，因为对我们的旅程并不重要。只要你掌握了这个教程的所有内容，你可以轻松实现这些缺失的功能。
 
-**在下一节中，我们将为这个语言编写一个解析器。**
+**在下一节中， [我们将为这个语言编写一个解析器](/implement-a-programming-language-2) 。**
+
+_相关文章_
+
+- [如何使用 JavaScript 实现一门编程语言(1)——前言](/implement-a-programming-language)
+- [如何使用 JavaScript 实现一门编程语言(2)——编写一个解析器](/implement-a-programming-language-2)
+- [如何使用 JavaScript 实现一门编程语言(3)——Input stream](/implement-a-programming-language-3)
+- [如何使用 JavaScript 实现一门编程语言(4)——Token stream](/implement-a-programming-language-4)
+- [如何使用 JavaScript 实现一门编程语言(5)——AST](/implement-a-programming-language-5)
 
 
 _原文链接：[http://lisperator.net/pltut/dream](http://lisperator.net/pltut/dream)_
