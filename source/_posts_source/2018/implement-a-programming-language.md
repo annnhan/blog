@@ -104,4 +104,4 @@ _相关文章_
 - [如何使用 JavaScript 实现一门编程语言(6)——Interpreter](/implement-a-programming-language-6)
 
 
-_原文链接：[http://lisperator.net/pltut/dream](http://lisperator.net/pltut/dream)_
+_原文链接：[http://lisperator.net/pltut/](http://lisperator.net/pltut/)_
