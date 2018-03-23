@@ -5,7 +5,7 @@ layout: post
 slug: implement-a-programming-language-2
 categories: [javascript]
 tags : [parse, programming, language, javascript, AST, compile, 编译原理]
-date: 2018-03-23
+date: 2018-03-22
 ---
 
 编写语言解析器是一项适度复杂的任务。实质上，它必须将一段代码（我们所看到的一堆字符）转换为“抽象语法树”（AST）。
