@@ -98,9 +98,10 @@ _相关文章_
 
 - [如何使用 JavaScript 实现一门编程语言(1)——前言](/implement-a-programming-language)
 - [如何使用 JavaScript 实现一门编程语言(2)——编写一个解析器](/implement-a-programming-language-2)
-- [如何使用 JavaScript 实现一门编程语言(3)——Input stream](/implement-a-programming-language-3)
-- [如何使用 JavaScript 实现一门编程语言(4)——Token stream](/implement-a-programming-language-4)
+- [如何使用 JavaScript 实现一门编程语言(3)——input-stream](/implement-a-programming-language-3)
+- [如何使用 JavaScript 实现一门编程语言(4)——token-stream](/implement-a-programming-language-4)
 - [如何使用 JavaScript 实现一门编程语言(5)——AST](/implement-a-programming-language-5)
+- [如何使用 JavaScript 实现一门编程语言(6)——Interpreter](/implement-a-programming-language-6)
 
 
 _原文链接：[http://lisperator.net/pltut/dream](http://lisperator.net/pltut/dream)_
