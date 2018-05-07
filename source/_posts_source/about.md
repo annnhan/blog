@@ -14,8 +14,6 @@ Hi，我是阿安
 
 如果您有事找我，请直奔主题，问在吗的都不在哈。
 
-E-Mail：hanan321@qq.com
-
 Weibo：[http://weibo.com/hanan321](http://weibo.com/hanan321)
 
 Github：[https://github.com/annnhan](https://github.com/annnhan)
