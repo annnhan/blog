@@ -14,8 +14,6 @@ Hi，我是阿安
 
 如果您有事找我，请直奔主题，问在吗的都不在哈。
 
-QQ：13124048
-
 E-Mail：hanan321@qq.com
 
 Weibo：[http://weibo.com/hanan321](http://weibo.com/hanan321)
